@@ -86,3 +86,17 @@
 .carousel-overlay {
   z-index: 1;
 }
+
+
+.texto-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .texto-desktop {
+    display: none;
+  }
+  .texto-mobile {
+    display: block;
+  }
+}
