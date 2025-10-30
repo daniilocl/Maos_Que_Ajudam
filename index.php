@@ -8,11 +8,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="public/css/home.css">
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body>
   <!-- Header -->
-  <?php include 'components/includes/header.php'; ?>
+  <?php include 'src/components/header.php'; ?>
 
   <!-- Carrossel -->
   <div id="carouselMaosQueAjudam" class="carousel slide" data-bs-ride="carousel">
@@ -21,7 +22,7 @@
       <!-- Slide 1 -->
       <div class="carousel-item active position-relative">
         <div class="carousel-overlay"></div> <!-- overlay sobre toda a imagem -->
-        <img src="public/imagens/Logo_MaosQueAjudam.jpg" class="d-block w-100" alt="Imagem 1">
+        <img src="public/imagens/logo/Logo_MaosQueAjudam.jpg" class="d-block w-100" alt="Imagem 1">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
           <a href="pagina1.php" class="text-white text-decoration-none">
             <h2 class="fw-bold">Quem Somos - Mãos que Ajudam</h2>
@@ -97,7 +98,7 @@
   </div>
 
   <!-- Footer -->
-  <?php include 'components/includes/footer.php'; ?>
+  <?php include 'src/components/footer.php'; ?>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
