@@ -4,13 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/projeto_ong/src/pages/login/login.css">
     <title>Registro / Login</title>
   </head>
-  <body>
     <body>
-
-      <?php include $_SERVER['DOCUMENT_ROOT'] . '/projeto_ong/src/components/header.php'; ?>
       
       <div id="loader" class="loader">
         <!-- Aqui vai o SVG que você trouxe -->
@@ -360,12 +357,8 @@
           </form>
         </div>
       </div>
+
+    <script src="/projeto_ong/src/pages/login/script.js"></script>
     </body>
 
-    <script src="script.js"></script>
-
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/projeto_ong/src/components/footer.php'; ?>
-    
-
-  </body>
 </html>

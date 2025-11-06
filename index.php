@@ -13,7 +13,8 @@
 
 <body>
   <!-- Header -->
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/projeto_ong/src/components/header.php'; ?>
+  <?php include 'src/components/header.php'; ?>
+
 
   <!-- Carrossel -->
   <div id="carouselMaosQueAjudam" class="carousel slide" data-bs-ride="carousel">
@@ -98,7 +99,7 @@
   </div>
 
   <!-- Footer -->
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/projeto_ong/src/components/footer.php'; ?>
+  <?php include 'src/components/footer.php'; ?>
 
   
 
