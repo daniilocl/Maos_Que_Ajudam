@@ -13,7 +13,7 @@
 
 <body>
   <!-- Header -->
-  <?php include 'src/components/header.php'; ?>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/projeto_ong/src/components/header.php'; ?>
 
   <!-- Carrossel -->
   <div id="carouselMaosQueAjudam" class="carousel slide" data-bs-ride="carousel">
@@ -98,11 +98,9 @@
   </div>
 
   <!-- Footer -->
-  <?php include 'src/components/footer.php'; ?>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/projeto_ong/src/components/footer.php'; ?>
 
   
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

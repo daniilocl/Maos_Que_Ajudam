@@ -9,6 +9,9 @@
   </head>
   <body>
     <body>
+
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/projeto_ong/src/components/header.php'; ?>
+      
       <div id="loader" class="loader">
         <!-- Aqui vai o SVG que você trouxe -->
         <!-- Cole todo o seu código SVG dentro deste div -->
@@ -360,5 +363,9 @@
     </body>
 
     <script src="script.js"></script>
+
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/projeto_ong/src/components/footer.php'; ?>
+    
+
   </body>
 </html>
