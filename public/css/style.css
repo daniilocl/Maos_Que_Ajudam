@@ -1,0 +1,167 @@
+.navbar {
+  background: #2298c7;
+  background: linear-gradient(90deg, rgba(34, 152, 199, 1) 0%, rgba(26, 70, 189, 1) 50%, rgba(82, 159, 217, 1) 100%);
+}
+
+.navbar-nav {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+.navbar .btn-login {
+  margin-left: auto;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    margin: 0 auto;
+  }
+
+  .navbar .btn-login {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+
+.navbar {
+  position: relative;
+  z-index: 1050;
+}
+
+
+.texto-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .texto-desktop {
+    display: none;
+  }
+  .texto-mobile {
+    display: block;
+  }
+}
+
+/* === Botão flutuante do WhatsApp fixo === */
+.Btn {
+  position: fixed;              
+  bottom: 25px;                 
+  right: 25px;                  
+  z-index: 2000;                
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;  
+}
+
+/* Container do ícone */
+.svgContainer {
+  width: 100%;
+  height: 83%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366;   /* cor do WhatsApp */
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* Efeito de fundo girando */
+.BG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00b347;
+  border-radius: 50%;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito hover */
+.Btn:hover .BG {
+  transform: rotate(45deg);
+}
+
+.Btn:hover .svgContainer {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* From Uiverse.io by mooosakhan */ 
+.card {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgba(238, 238, 238, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  flex-direction: row;
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128c7e;
+  transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
