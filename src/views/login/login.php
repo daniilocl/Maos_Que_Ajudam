@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="/projeto_ong/public/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="login.css" />
     <title>Registro / Login</title>
   </head>
   <body>
+    <?php include '../../components/header.php'; ?>
       <div class="desktop-layout">
           <div class="container" id="container">
             <div class="desktop-layout">
