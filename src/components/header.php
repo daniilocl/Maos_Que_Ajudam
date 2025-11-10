@@ -17,20 +17,20 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link active" href="/projeto_ong/index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/projeto_ong/src/pages/doacoes.php">Doações</a></li>
+        <li class="nav-item"><a class="nav-link" href="/projeto_ong/src/views/doacoes.php">Doações</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Mais</a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="/projeto_ong/src/pages/projetos.php">Projetos</a></li>
-            <li><a class="dropdown-item" href="/projeto_ong/src/pages/contribuicoes.php">Contribuições e Parcerias</a></li>
-            <li><a class="dropdown-item" href="/projeto_ong/src/pages/cadastro_voluntario.php">Cadastro de Voluntário</a></li>
-            <li><a class="dropdown-item" href="/projeto_ong/src/pages/administracao.php">Administração</a></li>
+            <li><a class="dropdown-item" href="/projeto_ong/src/views/projetos.php">Projetos</a></li>
+            <li><a class="dropdown-item" href="/projeto_ong/src/views/contribuicoes.php">Contribuições e Parcerias</a></li>
+            <li><a class="dropdown-item" href="/projeto_ong/src/views/cadastro_voluntario.php">Cadastro de Voluntário</a></li>
+            <li><a class="dropdown-item" href="/projeto_ong/src/views/administracao.php">Administração</a></li>
           </ul>
         </li>
       </ul>
     </div>
 
-    <a href="/projeto_ong/src/pages/login/login.php" class="btn btn-light text-primary ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
+    <a href="/projeto_ong/src/views/login/login.php" class="btn btn-light text-primary ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
   </div>
 </nav>
 
