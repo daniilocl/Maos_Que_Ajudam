@@ -15,6 +15,7 @@ if(!$conn) {
 
 echo"Connected sucessfully";
 
-$conn->set_charset("utf8");
+mysqli_set_charset($conn, "utf8");
+
 
 ?>

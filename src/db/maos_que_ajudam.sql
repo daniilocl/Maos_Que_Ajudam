@@ -1,5 +1,5 @@
-create database ONG;
-use ONG;
+create database maosqueajudam;
+use maosqueajudam;
 
 create table Usuario(
 	idUsuario int primary key,
