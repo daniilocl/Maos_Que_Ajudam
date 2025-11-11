@@ -14,27 +14,33 @@ ini_set('display_errors', 1);
     <title>Cadastro de voluntario</title>
 </head>
 <body>
+
     <?php include __DIR__ . '/../db/connection.php'; ?>
     <?php include __DIR__ . '/../components/header.php'; ?>
 
 
-    <main class="container mt-4">
-        <form action="../../src/models/voluntario.php" method="post">
-            <label for="idVol">Digite seu id</label>
-            <input type="text" name="idVol" id="idVol">
+    <main class="d-flex align-items-center py-4 bg-primary-subtle">
+        <section class="w-100 m-auto">
+            <form action="../../src/models/voluntario.php" method="post">
+                <span style="font-size: 25px;">Cadastro de voluntários</span>
+                <img src="/Maos_Que_Ajudam/public/imagens/logo/Logo_MaosQueAjudam.jpg" 
+                alt="Logo Mãos que Ajudam" 
+                width="100" max-width: 400px;
+                aspect-ratio: 1/1; 
+                class="me-4 rounded-3">
 
-            <label for="idVol">Digite seu nome</label>
-            <input type="text" name="nome" id="nome">
-
-            <label for="idVol">Digite seu email</label>
-            <input type="text" name="email" id="email">
-
-            <label for="idVol">Digite seu cpf</label>
-            <input type="text" name="cpf" id="cpf">
-
-            <button type="submit">Enviar</button>
-        </form>
-    </main>
+                <label for="idVol">Digite seu id</label>
+                <input type="text" name="idVol" id="idVol">
+                <label for="idVol">Digite seu nome</label>
+                <input type="text" name="nome" id="nome">
+                <label for="idVol">Digite seu email</label>
+                <input type="text" name="email" id="email">
+                <label for="idVol">Digite seu cpf</label>
+                <input type="text" name="cpf" id="cpf">
+                <button type="submit">Enviar</button>
+            </form>
+                </main>
+        </section>
 
     <?php include __DIR__ . '/../components/footer.php'; ?>
 

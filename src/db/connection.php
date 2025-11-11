@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$database = "maosqueajudam";
 $username = "root";
 $password = "";
+$database = "maosqueajudam";
 
 // Connection
 $conn = mysqli_connect($servername,$username,$password, $database);
