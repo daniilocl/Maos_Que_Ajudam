@@ -3,13 +3,12 @@
 include __DIR__ . '/../db/connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $idVol = mysqli_real_escape_string($conn, $_POST['idVol']);
     $nome  = mysqli_real_escape_string($conn, $_POST['nome']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $cpf   = mysqli_real_escape_string($conn, $_POST['cpf']);
 
-    $sql = "INSERT INTO Voluntario (idVol, nome, email, cpf) 
-            VALUES ('$idVol', '$nome', '$email', '$cpf')";
+    $sql = "INSERT INTO Voluntario (nome, email, cpf) 
+            VALUES ('$nome', '$email', '$cpf')";
 
     if (mysqli_query($conn, $sql)) {
         echo "✅ Novo registro inserido com sucesso!";
