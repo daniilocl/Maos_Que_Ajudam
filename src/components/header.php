@@ -6,7 +6,7 @@
            alt="Logo Mãos que Ajudam" 
            width="50" height="50" 
            class="me-2 rounded-circle">
-      <span style="font-size: 25px;">Mãos Que Ajudam</span>
+      <span style="font-size: 30px;"><b>Mãos Que Ajudam</b></span>
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"

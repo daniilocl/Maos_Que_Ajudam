@@ -1,75 +1,88 @@
-<!-- Footer -->
-<footer class="text-center text-lg-start text-white"
-  style="background: linear-gradient(to bottom, #3b82f6, #1e40af); color: white; font-family: 'Poppins', sans-serif;">
-  <!-- Grid container -->
-  <div class="container p-4 pb-0">
-    <!-- Section: Links -->
-    <section>
-      <!--Grid row-->
-      <div class="row">
-        <!-- Coluna 1 -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 fw-semibold" style="letter-spacing: 1px;">👐 Mãos que Ajudam</h6>
-          <p class="texto-desktop" style="font-size: 15px; line-height: 1.6;">
-            Somos uma organização sem fins lucrativos que promove solidariedade e transformação social.
-            Cada gesto de amor pode mudar vidas. Junte-se a nós nessa corrente do bem.
-          </p>
-          <p class="texto-mobile" style="font-size: 15px;">Faça parte dessa corrente do bem!</p>
-        </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mãos Que Ajudam</title>
 
-        <hr class="w-100 clearfix d-md-none" />
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        <!-- Coluna 2 -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 fw-semibold" style="letter-spacing: 1px;">Links Úteis</h6>
-          <p><a class="text-white text-decoration-none" href="#">Quem Somos</a></p>
-          <p><a class="text-white text-decoration-none" href="#">Projetos</a></p>
-          <p><a class="text-white text-decoration-none" href="#">Como Ajudar</a></p>
-          <p><a class="text-white text-decoration-none" href="#">Contato</a></p>
-        </div>
+  <!-- CSS Reset / Base -->
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Outfit', sans-serif;}
+    body {background:#f5f5f5; color:#111;}
+    a {text-decoration:none; color:inherit;}
+    ul {list-style:none;}
+    h1,h2,h3,h4,h5,h6 {margin:0; line-height:1.2;}
+    p {margin:0; line-height:1.6;}
+    .container {width:90%; max-width:1200px; margin:0 auto;}
+    .btn {display:inline-block; padding:10px 20px; border-radius:6px; font-weight:600; transition:0.3s; cursor:pointer; text-align:center;}
+    .btn-primary {background:linear-gradient(135deg, #3b82f6, #1e40af); color:white; border:none;}
+    .btn-primary:hover {filter:brightness(1.1);}
+  </style>
+</head>
+<body>
+<!-- HERO SECTION -->
+<section style="background: linear-gradient(135deg,#3b82f6,#1e40af); color:white; padding:80px 0; text-align:center;">
+  <h2 style="font-size:2.8em; font-weight:700; margin-bottom:20px;">Transformando Vidas com Solidariedade</h2>
+  <p style="font-size:1.2em; opacity:0.9; max-width:700px; margin:0 auto 30px;">Cada gesto de amor faz diferença. Junte-se à nossa corrente do bem e ajude a transformar vidas hoje mesmo.</p>
+  <a href="#" class="btn btn-primary">Faça Parte</a>
+</section>
 
-        <hr class="w-100 clearfix d-md-none" />
-
-        <!-- Coluna 3 -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 fw-semibold" style="letter-spacing: 1px;">Contato</h6>
-          <p style="font-size: 15px;">📍 São Paulo, SP – Brasil</p>
-          <p style="font-size: 15px;">✉️ contato@maosqueajudam.org</p>
-          <p style="font-size: 15px;">📞 +55 (11) 99999-9999</p>
-          <p style="font-size: 15px;">🕒 Atendimento: segunda a sexta, das 9h às 17h</p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="my-3" style="border-color: rgba(255,255,255,0.2);">
-
-    <!-- Direitos autorais -->
-    <section class="p-3 pt-0">
-      <div class="row d-flex align-items-center">
-        <div class="col-md-7 col-lg-8 text-center text-md-start">
-          <div class="p-3" style="font-size: 14px;">
-            © 2025 <strong>Mãos Que Ajudam</strong>. Todos os direitos reservados.
-          </div>
-
-          <!-- Ícones sociais -->
-          <div class="card" style="background: transparent; border: none;">
-            <a href="#" class="me-3"><svg class="socialSvg" viewBox="0 0 16 16" fill="white" width="24">
-                <path d="M8 0C5.83..." />
-              </svg></a>
-            <a href="#" class="me-3"><svg class="socialSvg" viewBox="0 0 16 16" fill="white" width="24">
-                <path d="M5.026..." />
-              </svg></a>
-            <a href="#" class="me-3"><svg class="socialSvg" viewBox="0 0 448 512" fill="white" width="24">
-                <path d="M100.28..." />
-              </svg></a>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- SEÇÃO DE CARDS / INFORMAÇÕES -->
+<section style="padding:60px 0; background:#f5f5f5;">
+  <div class="container" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
+    <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+      <h3 style="font-weight:600; margin-bottom:15px;">Quem Somos</h3>
+      <p>Organização sem fins lucrativos dedicada a criar impacto social positivo e transformação na vida das pessoas.</p>
+    </div>
+    <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+      <h3 style="font-weight:600; margin-bottom:15px;">Projetos</h3>
+      <p>Desenvolvemos iniciativas sociais focadas em educação, saúde e apoio à comunidade carente.</p>
+    </div>
+    <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+      <h3 style="font-weight:600; margin-bottom:15px;">Como Ajudar</h3>
+      <p>Saiba como contribuir e participar das nossas ações, seja como voluntário ou doador.</p>
+    </div>
   </div>
+</section>
 
+<!-- FOOTER MODERNO TECH -->
+<footer style="background: linear-gradient(135deg,#3b82f6,#1e40af); color:white; padding:60px 0;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
+      <!-- Sobre -->
+      <div>
+        <h5 style="font-weight:700; margin-bottom:20px;"> Mãos que Ajudam 👐</h5>
+        <p style="opacity:0.85;">Somos uma ONG comprometida em promover 
+          <p>solidariedade e impactar vidas positivamente.</p> 
+          Cada gesto faz diferença.</p>
+      </div>
+      <!-- Contato -->
+      <div>
+        <h6 style="font-weight:600; margin-bottom:15px;">Contato</h6>
+        <p style="opacity:0.85;">📍 São Paulo, SP – Brasil</p>
+        <p style="opacity:0.85;">✉️ contato@maosqueajudam.org</p>
+        <p style="opacity:0.85;">📞 +55 (11) 49028922</p>
+        <p style="opacity:0.85;">🕒 Seg–Sex, 9h às 17h</p>
+      </div>
+    </div>
+
+    <hr style="margin:40px 0; border-color: rgba(255,255,255,0.2);">
+
+    <div style="display:flex; flex-direction:column-reverse flex-md-row; justify-content:space-between; align-items:center; gap:20px;">
+      <p style="opacity:0.75; font-size:14px;">© 2025 <strong>Mãos Que Ajudam</strong>. Todos os direitos reservados.</p>
+      <div style="display:flex; gap:15px;">
+        <a href="#"><svg width="24" fill="white" style="opacity:0.85;" viewBox="0 0 16 16"><path d="M8 0C5.83..." /></svg></a>
+        <a href="#"><svg width="24" fill="white" style="opacity:0.85;" viewBox="0 0 16 16"><path d="M5.026..." /></svg></a>
+        <a href="#"><svg width="24" fill="white" style="opacity:0.85;" viewBox="0 0 448 512"><path d="M100.28..." /></svg></a>
+      </div>
+    </div>
+  </div>
 </footer>
-<!-- End Footer -->
 
  <!-- Botão WhatsApp Fixo -->
   <button class="Btn" onclick="window.open('https://wa.me/5511999999999', '_blank')">
@@ -82,3 +95,6 @@
     </span>
     <span class="BG"></span>
 </button>
+
+</body>
+</html>
