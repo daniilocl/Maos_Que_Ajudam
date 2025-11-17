@@ -14,7 +14,6 @@
 
     <main class="container mt-4">
         <!-- Conteúdo da página -->
-         teste
     </main>
 
     <?php include __DIR__ . '/../components/footer.php'; ?>

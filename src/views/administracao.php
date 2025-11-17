@@ -29,7 +29,7 @@
                     <ul class="nav flex-column">
                         <li class="nav-item"> <a class="nav-link active" href="#usuarios-section"> <i 
                                          class="fas fa-users"></i> Gerenciar Usuários </a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="logout.php"> <i class="fas fa-sign-out-alt"></i>
+                        <li class="nav-item"> <a class="nav-link" href="/Maos_Que_Ajudam/index.php"> <i class="fas fa-sign-out-alt"></i>
                                  Sair </a> </li>
                     </ul>
                 </div>
