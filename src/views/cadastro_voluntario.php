@@ -61,7 +61,7 @@ ini_set('display_errors', 1);
                         </button>
 
                         <p class="mt-3 text-center text-muted">
-                            <small>Já tem cadastro? <a href="#">Faça login aqui</a></small>
+                            <small>Já tem cadastro? <a href="/Maos_Que_Ajudam/src/views/login/login.php">Faça login aqui</a></small>
                         </p>
                     </form>
                 </div>
@@ -69,7 +69,57 @@ ini_set('display_errors', 1);
         </section>
     </main>
 
-    <?php include __DIR__ . '/../components/footer.php'; ?>
-    
+    <!-- SEÇÃO DE CARDS / INFORMAÇÕES -->
+<section style="padding:60px 0; background: #f8f9fa;">
+  <div class="container" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
+    <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+      <h3 style="font-weight:600; margin-bottom:15px;">Quem Somos</h3>
+      <p>Organização sem fins lucrativos dedicada a criar impacto social positivo e transformação na vida das pessoas.</p>
+    </div>
+    <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+      <h3 style="font-weight:600; margin-bottom:15px;">Projetos</h3>
+      <p>Desenvolvemos iniciativas sociais focadas em educação, saúde e apoio à comunidade carente.</p>
+    </div>
+    <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+      <h3 style="font-weight:600; margin-bottom:15px;">Como Ajudar</h3>
+      <p>Saiba como contribuir e participar das nossas ações, seja como voluntário ou doador.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER MODERNO TECH -->
+<footer style="background: linear-gradient(135deg,#3b82f6,#1e40af); color:white; padding:60px 0;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
+      <!-- Sobre -->
+      <div>
+        <h5 style="font-weight:700; margin-bottom:20px;"> Mãos que Ajudam 👐</h5>
+        <p style="opacity:0.85;">Somos uma ONG comprometida em promover 
+          <p>solidariedade e impactar vidas positivamente.</p> 
+          Cada gesto faz diferença.</p>
+      </div>
+      <!-- Contato -->
+      <div>
+        <h6 style="font-weight:600; margin-bottom:15px;">Contato</h6>
+        <p style="opacity:0.85;">📍 São Paulo, SP – Brasil</p>
+        <p style="opacity:0.85;">✉️ contato@maosqueajudam.org</p>
+        <p style="opacity:0.85;">📞 +55 (11) 49028922</p>
+        <p style="opacity:0.85;">🕒 Seg–Sex, 9h às 17h</p>
+      </div>
+    </div>
+
+    <hr style="margin:40px 0; border-color: rgba(255,255,255,0.2);">
+
+    <div style="display:flex; flex-direction:column-reverse flex-md-row; justify-content:space-between; align-items:center; gap:20px;">
+      <p style="opacity:0.75; font-size:14px;">© 2025 <strong>Mãos Que Ajudam</strong>. Todos os direitos reservados.</p>
+      <div style="display:flex; gap:15px;">
+        <a href="#"><svg width="24" fill="white" style="opacity:0.85;" viewBox="0 0 16 16"><path d="M8 0C5.83..." /></svg></a>
+        <a href="#"><svg width="24" fill="white" style="opacity:0.85;" viewBox="0 0 16 16"><path d="M5.026..." /></svg></a>
+        <a href="#"><svg width="24" fill="white" style="opacity:0.85;" viewBox="0 0 448 512"><path d="M100.28..." /></svg></a>
+      </div>
+    </div>
+  </div>
+
+</footer>
     </body>
 </html>

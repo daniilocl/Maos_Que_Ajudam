@@ -23,7 +23,7 @@
       <!-- Slide 1 -->
       <div class="carousel-item active position-relative">
         <div class="carousel-overlay"></div> <!-- overlay sobre toda a imagem -->
-        <img src="public/imagens/logo/Logo_MaosQueAjudam.jpg" class="d-block w-100" alt="Imagem 1">
+        <img src="public/imagens/logo/camisa.azul.png" class="d-block w-100" alt="Imagem 1">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
           <a href="pagina1.php" class="text-white text-decoration-none">
             <h2 class="fw-bold">Quem Somos - Mãos que Ajudam</h2>
@@ -31,7 +31,8 @@
           <h3>Unindo mãos para transformar vidas.</h3>
           <p>
             A ONG Mãos que Ajudam nasceu com o propósito de levar solidariedade, empatia e esperança a quem mais
-            precisa. Acreditamos que pequenas atitudes podem gerar grandes transformações. Nosso compromisso é ajudar
+            precisa. Acreditamo
+            s que pequenas atitudes podem gerar grandes transformações. Nosso compromisso é ajudar
             pessoas de todas as idades e realidades, oferecendo oportunidades, acolhimento e apoio humano. Aqui, cada
             gesto conta — porque juntos, somos mais fortes.</p>
         </div>
@@ -40,7 +41,7 @@
       <!-- Slide 2 -->
       <div class="carousel-item position-relative">
         <div class="carousel-overlay"></div>
-        <img src="imagens/imagem2.jpg" class="d-block w-100" alt="Imagem 2">
+        <img src="public/imagens/logo/doacoes/doacoes_carrossel.png" class="d-block w-100" alt="Imagem 2">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
           <a href="pagina2.php" class="text-white text-decoration-none">
             <h2 class="fw-bold">Doações</h2>
@@ -57,7 +58,7 @@ generosidade é o primeiro passo para um futuro melhor.</p>
       <!-- Slide 3 -->
       <div class="carousel-item position-relative">
         <div class="carousel-overlay"></div>
-        <img src="imagens/imagem3.jpg" class="d-block w-100" alt="Imagem 3">
+        <img src="public/imagens/logo/projetos/projetos.sala.png" class="d-block w-100" alt="Imagem 3">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
           <a href="pagina3.php" class="text-white text-decoration-none">
             <h2 class="fw-bold"> Projetos – Educação e oportunidades para todos</h2>
@@ -74,7 +75,7 @@ transformação.</p>
       <!-- Slide 4 -->
       <div class="carousel-item position-relative">
         <div class="carousel-overlay"></div>
-        <img src="imagens/imagem4.jpg" class="d-block w-100" alt="Imagem 4">
+        <img src="public/imagens/logo/voluntarios/voluntarios.azul.png" class="d-block w-100" alt="Imagem 4">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
           <a href="pagina4.php" class="text-white text-decoration-none">
             <h2 class="fw-bold">Seja um Voluntário – Junte-se a nós</h2>
@@ -89,7 +90,7 @@ experiência que muda você e o mundo ao seu redor. </p>
       <!-- Slide 5 -->
       <div class="carousel-item position-relative">
         <div class="carousel-overlay"></div>
-        <img src="imagens/imagem4.jpg" class="d-block w-100" alt="Imagem 4">
+        <img src="public/imagens/logo/parcerias/parcerias.azul.png" class="d-block w-100" alt="Imagem 4">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
           <a href="pagina4.php" class="text-white text-decoration-none">
             <h2 class="fw-bold"> Contribuições e Parcerias – Juntos somos mais fortes</h2>

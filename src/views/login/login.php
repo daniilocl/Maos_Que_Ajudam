@@ -21,15 +21,15 @@
             <input type="text" placeholder="CPF" required />
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Senha" required />
-            <button href="../Pagina_1/index.html">Registrar</button>
+            <button href="../Pagina_1/index.html">Cadastrar</button>
           </form>
         </div>
 
         <div class="form-container login-container">
           <form action="#">
             <h1>Faça seu login</h1>
-            <input type="email" placeholder="Email" required />
-            <input type="password" placeholder="Senha" required />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Senha" />
             <div class="content">
               <div class="checkbox">
                 <input type="checkbox" id="checkbox" />
@@ -39,7 +39,7 @@
                 <a href="#">Esqueceu sua senha?</a>
               </div>
             </div>
-            <a href="/Maos_Que_Ajudam">
+            <a href="/Maos_Que_Ajudam/index.php">
               <button>Login</button>
             </a>
             <span>ou use sua conta</span>
@@ -47,7 +47,7 @@
               <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
               <a href="#" class="social"><i class="lni lni-google"></i></a>
             </div>
-              <button class="button_voltar">Voltar</button>
+              <button class="button_voltar"><a href="/Maos_Que_Ajudam/index.php">Voltar</a></button>
           </form>
         </div>
 
@@ -74,7 +74,7 @@
                 jornada
               </p>
               <button class="ghost" id="register">
-                Registro
+                Cadastrar
                 <i class="lni lni-arrow-right register"></i>
               </button>
             </div>
@@ -97,12 +97,12 @@
       </form>
 
       <form id="mobile-register" style="display: none">
-        <h1>Registro</h1>
+        <h1>Cadastrar</h1>
         <input type="text" placeholder="Nome" required />
         <input type="text" placeholder="CPF" required />
         <input type="email" placeholder="Email" required />
         <input type="password" placeholder="Senha" required />
-        <button type="submit">Registrar</button>
+        <button type="submit">Cadastrar</button>
         <p>Já tem conta? <a href="#" id="show-login">Entrar</a></p>
       </form>
     </div>
