@@ -1,23 +1,26 @@
 <?php
-// Saia de controllers/ (..), entre em db/ (db/)
 // src/controllers/cadastro.php
+
+// Inclusão de dependências (Caminhos relativos CORRETOS)
+// Saia de controllers/ (..), entre em db/ (db/)
 require_once __DIR__ . '/../db/connection.php';
-require_once __DIR__ . '/../models/Usuario.php'; // <-- CAMINHO CORRIGIDO
+require_once __DIR__ . '/../models/Usuario.php'; 
 
 session_start();
 $usuarioModel = new Usuario($conn);
 $erro = '';
+$BASE_URL = "/Maos_Que_Ajudam/src"; // Define a URL base para redirecionamentos
 
 // Variáveis para preencher o formulário em caso de erro
 $nome = $cpf = $email = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Coletar dados do POST (o nome dos campos deve corresponder aos do HTML)
+    // Coletar dados do POST
     $nome = trim($_POST['nome'] ?? '');
     $cpf = trim($_POST['cpf'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $senha = $_POST['senha'] ?? '';
-    $confirma_senha = $_POST['confirma_senha'] ?? ''; // (Adicionar este campo no seu HTML)
+    $confirma_senha = $_POST['confirma_senha'] ?? ''; 
 
     // Validação básica
     if (empty($nome) || empty($cpf) || empty($email) || empty($senha)) {
@@ -29,7 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($usuarioModel->cadastrarUsuario($nome, $cpf, $email, $senha)) {
             // Sucesso: redireciona para o login com a mensagem de sucesso
             $_SESSION['cadastro_sucesso'] = "Cadastro realizado com sucesso! Faça login.";
-            header("Location: /Maos_Que_Ajudam/src/views/login/login.php"); 
+            // Redirecionamento CORRIGIDO/CONFIRMADO para views/login/login.php
+            header("Location: {$BASE_URL}/views/login/login.php"); 
             exit;
         } else {
             // Falha: pode ser e-mail/CPF duplicado ou erro de banco
@@ -38,7 +42,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-// Inclua a View do formulário aqui. (A View deve usar as variáveis $erro, $nome, $email, $cpf)
-// Se o seu formulário estiver em /views/cadastro_form.html, você faria:
+// Inclua a View do formulário aqui. 
 // require_once __DIR__ . '/../views/cadastro_form.html'; 
-?>

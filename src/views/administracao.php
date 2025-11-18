@@ -1,3 +1,23 @@
+<?php
+// src/views/administracao.php
+session_start();
+
+// 1. Verifica se o usuário está logado. Se não estiver, redireciona para o login.
+if (!isset($_SESSION['user_id'])) {
+    // Definir a BASE_URL como nos outros controllers
+    $BASE_URL = "/Maos_Que_Ajudam/src";
+    header("Location: {$BASE_URL}/views/login/login.php");
+    exit;
+}
+
+// 2. Verifica se o usuário logado TEM a permissão 'admin'. Se não tiver, redireciona para a página inicial.
+if ($_SESSION['user_tipo'] !== 'admin') {
+    header("Location: /Maos_Que_Ajudam/index.php"); // Redireciona para a página inicial ou de cliente
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,16 +27,42 @@
     <title>Administração - Gerenciar Usuários</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./public/css/style.css"> 
+    <link rel="stylesheet" href="./public/css/style.css">
     <style>
         /* Estilos simples para o admin (mantidos para o layout) */
-        body { background-color: #f8f9fa; }
-        .sidebar { height: 100vh; background-color: #343a40; color: white; }
-        .sidebar a { color: white; text-decoration: none; padding: 10px 15px; display: block; }
-        .sidebar a:hover { background-color: #495057; }
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #343a40;
+            color: white;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+
         /* Destaque para a Tabela */
-        .table-responsive { max-height: 70vh; overflow-y: auto; }
-        .table thead th { position: sticky; top: 0; background-color: #f8f9fa; z-index: 10; }
+        .table-responsive {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .table thead th {
+            position: sticky;
+            top: 0;
+            background-color: #f8f9fa;
+            z-index: 10;
+        }
     </style>
 </head>
 
@@ -27,14 +73,15 @@
                 <div class="position-sticky pt-3">
                     <h4 class="text-center py-3 border-bottom">Administração</h4>
                     <ul class="nav flex-column">
-                        <li class="nav-item"> <a class="nav-link active" href="#usuarios-section"> <i 
-                                         class="fas fa-users"></i> Gerenciar Usuários </a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="/Maos_Que_Ajudam/index.php"> <i class="fas fa-sign-out-alt"></i>
-                                 Sair </a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="#usuarios-section"> <i
+                                    class="fas fa-users"></i> Gerenciar Usuários </a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/Maos_Que_Ajudam/src/controllers/logout.php">
+                                <i class="fas fa-sign-out-alt"></i> Sair
+                            </a </li>
                     </ul>
                 </div>
             </nav>
-            
+
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <h1 class="mt-4 pb-2 border-bottom">Painel de Administração</h1>
 
@@ -47,8 +94,10 @@
                             <i class="fas fa-plus-circle"></i> Adicionar Novo Usuário
                         </button>
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Buscar por Nome ou Email" aria-label="Buscar">
-                            <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                            <input class="form-control me-2" type="search" placeholder="Buscar por Nome ou Email"
+                                aria-label="Buscar">
+                            <button class="btn btn-outline-secondary" type="submit"><i
+                                    class="fas fa-search"></i></button>
                         </form>
                     </div>
 
@@ -72,9 +121,13 @@
                                     <td><span class="badge bg-danger">Administrador</span></td>
                                     <td>2023-10-01</td>
                                     <td>
-                                        <button class="btn btn-sm btn-info text-white me-1" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario"><i class="fas fa-edit"></i> Editar</button>
-                                        <button class="btn btn-sm btn-warning me-1"><i class="fas fa-lock"></i> Bloquear</button>
-                                        <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i> Excluir</button>
+                                        <button class="btn btn-sm btn-info text-white me-1" data-bs-toggle="modal"
+                                            data-bs-target="#modalEditarUsuario"><i class="fas fa-edit"></i>
+                                            Editar</button>
+                                        <button class="btn btn-sm btn-warning me-1"><i class="fas fa-lock"></i>
+                                            Bloquear</button>
+                                        <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i>
+                                            Excluir</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -84,15 +137,19 @@
                                     <td><span class="badge bg-success">Padrão</span></td>
                                     <td>2024-01-15</td>
                                     <td>
-                                        <button class="btn btn-sm btn-info text-white me-1" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario"><i class="fas fa-edit"></i> Editar</button>
-                                        <button class="btn btn-sm btn-warning me-1"><i class="fas fa-lock"></i> Bloquear</button>
-                                        <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i> Excluir</button>
+                                        <button class="btn btn-sm btn-info text-white me-1" data-bs-toggle="modal"
+                                            data-bs-target="#modalEditarUsuario"><i class="fas fa-edit"></i>
+                                            Editar</button>
+                                        <button class="btn btn-sm btn-warning me-1"><i class="fas fa-lock"></i>
+                                            Bloquear</button>
+                                        <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i>
+                                            Excluir</button>
                                     </td>
                                 </tr>
-                                </tbody>
+                            </tbody>
                         </table>
                     </div>
-                    
+
                 </section>
             </main>
         </div>
@@ -128,7 +185,8 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Salvar Usuário</button>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Salvar
+                                Usuário</button>
                         </div>
                     </form>
                 </div>

@@ -10,32 +10,86 @@ class Usuario {
 
     /**
      * Cadastra um novo usuário com tipo_usuario='cliente'.
-     * Adicionando 'nome' e 'cpf' que estão no formulário.
+     * Retorna o ID do novo usuário em caso de sucesso ou false em caso de falha.
      */
-    public function cadastrarUsuario($nome, $cpf, $email, $senha) { // <-- Recebe nome e cpf
+    public function cadastrarUsuario($nome, $cpf, $email, $senha) { 
+        if (!$this->conn) {
+            error_log("Erro de Conexão no cadastrarUsuario.");
+            return false;
+        }
+
         $tipo_padrao = 'cliente'; 
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-        // Prepared Statement: 5 colunas
-        $sql = "INSERT INTO Usuario (nome, cpf, email, senha, tipo_usuario) VALUES (?, ?, ?, ?, ?)"; // <-- 5 placeholders
+        $sql = "INSERT INTO Usuario (nome, cpf, email, senha, tipo_usuario) VALUES (?, ?, ?, ?, ?)"; 
         $stmt = mysqli_prepare($this->conn, $sql);
         
-        if (!$stmt) return false;
+        if (!$stmt) {
+            error_log("Erro ao preparar statement no cadastro: " . mysqli_error($this->conn));
+            return false;
+        }
 
-        // Liga 5 parâmetros: 'sssss' -> 5 strings
-        mysqli_stmt_bind_param($stmt, "sssss", $nome, $cpf, $email, $senha_hash, $tipo_padrao); // <-- Liga 5 variáveis
+        mysqli_stmt_bind_param($stmt, "sssss", $nome, $cpf, $email, $senha_hash, $tipo_padrao);
 
         $result = mysqli_stmt_execute($stmt);
         
-        mysqli_stmt_close($stmt);
-        
-        return $result;
+        if ($result) {
+             // Retorna o ID do novo usuário
+            $new_id = mysqli_insert_id($this->conn);
+            mysqli_stmt_close($stmt);
+            return $new_id;
+        } else {
+            error_log("Erro ao executar cadastro: " . mysqli_stmt_error($stmt));
+            mysqli_stmt_close($stmt);
+            return false;
+        }
     }
 
-    // ... (Método buscarPorEmail permanece inalterado, mas deve buscar o nome e o cpf se quiser usar na sessão)
+    /**
+     * Cadastra um novo usuário com tipo_usuario='voluntario'.
+     * Retorna o ID do novo usuário em caso de sucesso ou false em caso de falha.
+     */
+    public function cadastrarVoluntario($nome, $cpf, $email, $senha) { 
+        if (!$this->conn) {
+            error_log("Erro de Conexão no cadastrarVoluntario.");
+            return false;
+        }
+
+        $tipo_voluntario = 'voluntario'; 
+        $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
+        // A inserção é na tabela 'Usuario', não 'Voluntario'
+        $sql = "INSERT INTO Usuario (nome, cpf, email, senha, tipo_usuario) VALUES (?, ?, ?, ?, ?)"; 
+        $stmt = mysqli_prepare($this->conn, $sql);
+        
+        if (!$stmt) {
+            error_log("Erro ao preparar statement no cadastro de voluntário: " . mysqli_error($this->conn));
+            return false;
+        }
+
+        mysqli_stmt_bind_param($stmt, "sssss", $nome, $cpf, $email, $senha_hash, $tipo_voluntario);
+
+        $result = mysqli_stmt_execute($stmt);
+        
+        if ($result) {
+            // NOVO: Retorna o ID do novo usuário
+            $new_id = mysqli_insert_id($this->conn);
+            mysqli_stmt_close($stmt);
+            return $new_id;
+        } else {
+            // Se falhar, é provável que seja CPF/E-mail duplicado
+            error_log("Erro ao executar cadastro de voluntário: " . mysqli_stmt_error($stmt));
+            mysqli_stmt_close($stmt);
+            return false;
+        }
+    }
+
+    /**
+     * Busca usuário por e-mail para o processo de login.
+     * Inclui 'tipo_usuario' para a lógica de redirecionamento.
+     */
     public function buscarPorEmail($email) {
-        // Mantenha essa query para buscar dados necessários ao login
-        $sql = "SELECT id, nome, senha, tipo_usuario FROM usuarios WHERE email = ?"; 
+        $sql = "SELECT idUsuario, nome, senha, tipo_usuario FROM Usuario WHERE email = ?"; 
         $stmt = mysqli_prepare($this->conn, $sql);
         
         if (!$stmt) return null;
@@ -51,3 +105,4 @@ class Usuario {
         return $usuario;
     }
 }
+// Removemos a tag de fechamento para evitar problemas de headers
