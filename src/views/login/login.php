@@ -15,21 +15,22 @@
     <div class="container" id="container">
       <div class="desktop-layout">
         <div class="form-container register-container">
-          <form action="#">
+        <form action="../../controllers/cadastro.php" method="POST">
             <h1>Crie sua conta</h1>
-            <input type="text" placeholder="Nome" required />
-            <input type="text" placeholder="CPF" required />
-            <input type="email" placeholder="Email" required />
-            <input type="password" placeholder="Senha" required />
-            <button href="../Pagina_1/index.html">Cadastrar</button>
+            <input type="text" placeholder="Nome" name="nome" required />
+            <input type="text" placeholder="CPF" name="cpf" required />
+            <input type="email" placeholder="Email" name="email" required />
+            <input type="password" placeholder="Senha" name="senha" required />
+            <input type="password" placeholder="Confirme a Senha" name="confirma_senha" required />
+            <button type="submit">Cadastrar</button>
           </form>
         </div>
 
         <div class="form-container login-container">
-          <form action="#">
+          <form action="../../controllers/login.php" method="POST">
             <h1>Faça seu login</h1>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Senha" />
+            <input type="email" placeholder="Email" name="email" required/>
+            <input type="password" placeholder="Senha" name="senha" required/>
             <div class="content">
               <div class="checkbox">
                 <input type="checkbox" id="checkbox" />
@@ -40,14 +41,14 @@
               </div>
             </div>
             <a href="/Maos_Que_Ajudam/index.php">
-              <button>Login</button>
+              <button type="submit">Login</button>
             </a>
             <span>ou use sua conta</span>
             <div class="social-container">
               <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
               <a href="#" class="social"><i class="lni lni-google"></i></a>
             </div>
-              <button class="button_voltar"><a href="/Maos_Que_Ajudam/index.php">Voltar</a></button>
+            <button class="button_voltar"><a href="/Maos_Que_Ajudam/index.php">Voltar</a></button>
           </form>
         </div>
 

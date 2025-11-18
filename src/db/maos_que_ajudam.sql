@@ -3,8 +3,11 @@ use maosqueajudam;
 
 create table Usuario(
 	idUsuario int primary key auto_increment,
-    username varchar(50) not null unique,
-    senha varchar(50) not null);
+    nome varchar(50) not null unique,
+    cpf bigint not null,
+    email varchar(100) not null,
+    senha varchar(100) not null,
+    tipo_usuario ENUM('cliente', 'admin', 'voluntario') not null);
 
 create table Funcionario(
 	idFunc int primary key auto_increment,
