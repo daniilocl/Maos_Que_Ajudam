@@ -1,10 +1,12 @@
 <?php
 // models/Usuario.php
 
-class Usuario {
+class Usuario
+{
     private $conn;
 
-    public function __construct($conn) {
+    public function __construct($conn)
+    {
         $this->conn = $conn;
     }
 
@@ -12,18 +14,19 @@ class Usuario {
      * Cadastra um novo usuário com tipo_usuario='cliente'.
      * Retorna o ID do novo usuário em caso de sucesso ou false em caso de falha.
      */
-    public function cadastrarUsuario($nome, $cpf, $email, $senha) { 
+    public function cadastrarUsuario($nome, $cpf, $email, $senha)
+    {
         if (!$this->conn) {
             error_log("Erro de Conexão no cadastrarUsuario.");
             return false;
         }
 
-        $tipo_padrao = 'cliente'; 
+        $tipo_padrao = 'cliente';
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO Usuario (nome, cpf, email, senha, tipo_usuario) VALUES (?, ?, ?, ?, ?)"; 
+        $sql = "INSERT INTO Usuario (nome, cpf, email, senha, tipo_usuario) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($this->conn, $sql);
-        
+
         if (!$stmt) {
             error_log("Erro ao preparar statement no cadastro: " . mysqli_error($this->conn));
             return false;
@@ -32,9 +35,9 @@ class Usuario {
         mysqli_stmt_bind_param($stmt, "sssss", $nome, $cpf, $email, $senha_hash, $tipo_padrao);
 
         $result = mysqli_stmt_execute($stmt);
-        
+
         if ($result) {
-             // Retorna o ID do novo usuário
+            // Retorna o ID do novo usuário
             $new_id = mysqli_insert_id($this->conn);
             mysqli_stmt_close($stmt);
             return $new_id;
@@ -49,19 +52,20 @@ class Usuario {
      * Cadastra um novo usuário com tipo_usuario='voluntario'.
      * Retorna o ID do novo usuário em caso de sucesso ou false em caso de falha.
      */
-    public function cadastrarVoluntario($nome, $cpf, $email, $senha) { 
+    public function cadastrarVoluntario($nome, $cpf, $email, $senha)
+    {
         if (!$this->conn) {
             error_log("Erro de Conexão no cadastrarVoluntario.");
             return false;
         }
 
-        $tipo_voluntario = 'voluntario'; 
+        $tipo_voluntario = 'voluntario';
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
         // A inserção é na tabela 'Usuario', não 'Voluntario'
-        $sql = "INSERT INTO Usuario (nome, cpf, email, senha, tipo_usuario) VALUES (?, ?, ?, ?, ?)"; 
+        $sql = "INSERT INTO Usuario (nome, cpf, email, senha, tipo_usuario) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($this->conn, $sql);
-        
+
         if (!$stmt) {
             error_log("Erro ao preparar statement no cadastro de voluntário: " . mysqli_error($this->conn));
             return false;
@@ -70,7 +74,7 @@ class Usuario {
         mysqli_stmt_bind_param($stmt, "sssss", $nome, $cpf, $email, $senha_hash, $tipo_voluntario);
 
         $result = mysqli_stmt_execute($stmt);
-        
+
         if ($result) {
             // NOVO: Retorna o ID do novo usuário
             $new_id = mysqli_insert_id($this->conn);
@@ -88,21 +92,84 @@ class Usuario {
      * Busca usuário por e-mail para o processo de login.
      * Inclui 'tipo_usuario' para a lógica de redirecionamento.
      */
-    public function buscarPorEmail($email) {
-        $sql = "SELECT idUsuario, nome, senha, tipo_usuario FROM Usuario WHERE email = ?"; 
+    public function buscarPorEmail($email)
+    {
+        $sql = "SELECT idUsuario, nome, senha, tipo_usuario FROM Usuario WHERE email = ?";
         $stmt = mysqli_prepare($this->conn, $sql);
-        
-        if (!$stmt) return null;
-        
+
+        if (!$stmt)
+            return null;
+
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
-        
+
         $result = mysqli_stmt_get_result($stmt);
         $usuario = mysqli_fetch_assoc($result);
-        
+
         mysqli_stmt_close($stmt);
-        
+
         return $usuario;
     }
+    public function listarUsuarios()
+    {
+        $sql = "SELECT idUsuario, nome, email, tipo_usuario, created_at 
+            FROM Usuario 
+            ORDER BY idUsuario DESC";
+
+        $result = mysqli_query($this->conn, $sql);
+
+        $usuarios = [];
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $usuarios[] = $row;
+            }
+        }
+        return $usuarios;
+    }
+
+    public function criar($nome, $email, $senha, $tipo_usuario)
+    {
+        $sql = "INSERT INTO Usuario (nome, email, senha, tipo_usuario, created_at) 
+            VALUES (?, ?, ?, ?, NOW())";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("ssss", $nome, $email, $senha, $tipo_usuario);
+
+        return $stmt->execute();
+    }
+
+    public function buscarPorId($id)
+    {
+        $sql = "SELECT * FROM Usuario WHERE idUsuario = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_assoc();
+    }
+
+    public function atualizar($id, $nome, $email, $tipo_usuario)
+    {
+        $sql = "UPDATE Usuario 
+            SET nome = ?, email = ?, tipo_usuario = ?
+            WHERE idUsuario = ?";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("sssi", $nome, $email, $tipo_usuario, $id);
+
+        return $stmt->execute();
+    }
+
+    public function buscar($termo)
+    {
+        $termo = "%" . $termo . "%";
+        $stmt = $this->conn->prepare("
+        SELECT idUsuario, nome, email, tipo_usuario, created_at
+        FROM Usuario
+        WHERE nome LIKE ? OR email LIKE ?
+        ORDER BY idUsuario DESC
+    ");
+        $stmt->bind_param("ss", $termo, $termo);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
 }
-// Removemos a tag de fechamento para evitar problemas de headers

@@ -1,21 +1,28 @@
 <?php
-// src/views/administracao.php
+require_once __DIR__ . '/../db/connection.php';
+require_once __DIR__ . '/../models/Usuario.php';
+
 session_start();
 
-// 1. Verifica se o usuário está logado. Se não estiver, redireciona para o login.
+// Verifica login
 if (!isset($_SESSION['user_id'])) {
-    // Definir a BASE_URL como nos outros controllers
-    $BASE_URL = "/Maos_Que_Ajudam/src";
-    header("Location: {$BASE_URL}/views/login/login.php");
+    header("Location: /Maos_Que_Ajudam/src/views/login/login.php");
     exit;
 }
 
-// 2. Verifica se o usuário logado TEM a permissão 'admin'. Se não tiver, redireciona para a página inicial.
+// Verifica permissão
 if ($_SESSION['user_tipo'] !== 'admin') {
-    header("Location: /Maos_Que_Ajudam/index.php"); // Redireciona para a página inicial ou de cliente
+    header("Location: /Maos_Que_Ajudam/index.php");
     exit;
 }
 
+$usuarioModel = new Usuario($conn);
+
+if (isset($_GET['busca']) && $_GET['busca'] !== '') {
+    $usuarios = $usuarioModel->buscar($_GET['busca']);
+} else {
+    $usuarios = $usuarioModel->listarUsuarios();
+}
 ?>
 
 <!DOCTYPE html>
@@ -93,11 +100,17 @@ if ($_SESSION['user_tipo'] !== 'admin') {
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdicionarUsuario">
                             <i class="fas fa-plus-circle"></i> Adicionar Novo Usuário
                         </button>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Buscar por Nome ou Email"
-                                aria-label="Buscar">
-                            <button class="btn btn-outline-secondary" type="submit"><i
-                                    class="fas fa-search"></i></button>
+                        <form class="d-flex" method="GET" action="administracao.php">
+                            <input class="form-control me-2" type="search" name="busca"
+                                value="<?= $_GET['busca'] ?? '' ?>" placeholder="Buscar por nome ou email">
+
+                            <button class="btn btn-outline-secondary me-2" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+
+                            <a href="administracao.php" class="btn btn-outline-danger">
+                                <i class="fas fa-eraser"></i>
+                            </a>
                         </form>
                     </div>
 
@@ -114,39 +127,42 @@ if ($_SESSION['user_tipo'] !== 'admin') {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>João da Silva (Admin)</td>
-                                    <td>joao.admin@maos.com</td>
-                                    <td><span class="badge bg-danger">Administrador</span></td>
-                                    <td>2023-10-01</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-info text-white me-1" data-bs-toggle="modal"
-                                            data-bs-target="#modalEditarUsuario"><i class="fas fa-edit"></i>
-                                            Editar</button>
-                                        <button class="btn btn-sm btn-warning me-1"><i class="fas fa-lock"></i>
-                                            Bloquear</button>
-                                        <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i>
-                                            Excluir</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Maria de Souza</td>
-                                    <td>maria@maos.com</td>
-                                    <td><span class="badge bg-success">Padrão</span></td>
-                                    <td>2024-01-15</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-info text-white me-1" data-bs-toggle="modal"
-                                            data-bs-target="#modalEditarUsuario"><i class="fas fa-edit"></i>
-                                            Editar</button>
-                                        <button class="btn btn-sm btn-warning me-1"><i class="fas fa-lock"></i>
-                                            Bloquear</button>
-                                        <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i>
-                                            Excluir</button>
-                                    </td>
-                                </tr>
+                                <?php foreach ($usuarios as $u): ?>
+                                    <tr>
+                                        <td><?= $u['idUsuario'] ?></td>
+                                        <td><?= $u['nome'] ?></td>
+                                        <td><?= $u['email'] ?></td>
+
+                                        <td>
+                                            <?php if ($u['tipo_usuario'] === 'admin'): ?>
+                                                <span class="badge bg-danger">Administrador</span>
+
+                                            <?php elseif ($u['tipo_usuario'] === 'voluntario'): ?>
+                                                <span class="badge bg-primary">Voluntário</span>
+
+                                            <?php else: ?>
+                                                <span class="badge bg-success">Padrão</span>
+                                            <?php endif; ?>
+                                        </td>
+
+                                        <td><?= $u['created_at'] ?? '—' ?></td>
+
+                                        <td>
+                                            <a href="/Maos_Que_Ajudam/src/controllers/editar_usuario.php?id=<?= $u['idUsuario'] ?>"
+                                                class="btn btn-sm btn-info text-white me-1">
+                                                <i class="fas fa-edit"></i> Editar
+                                            </a>
+
+                                            <a href="/Maos_Que_Ajudam/src/controllers/excluir_usuario.php?id=<?= $u['idUsuario'] ?>"
+                                                onclick="return confirm('Tem certeza que deseja excluir?')"
+                                                class="btn btn-sm btn-danger">
+                                                <i class="fas fa-trash-alt"></i> Excluir
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
+
                         </table>
                     </div>
 
@@ -163,24 +179,25 @@ if ($_SESSION['user_tipo'] !== 'admin') {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form method="POST" action="/Maos_Que_Ajudam/src/controllers/adicionar_usuario.php">
                         <div class="mb-3">
                             <label for="nomeUsuario" class="form-label">Nome Completo</label>
-                            <input type="text" class="form-control" id="nomeUsuario" required>
+                            <input type="text" name="nome" class="form-control" id="nomeUsuario" required>
                         </div>
                         <div class="mb-3">
                             <label for="emailUsuario" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="emailUsuario" required>
+                            <input type="email" name="email" class="form-control" id="emailUsuario" required>
                         </div>
                         <div class="mb-3">
                             <label for="senhaUsuario" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="senhaUsuario" required>
+                            <input type="password" name="senha" class="form-control" id="senhaUsuario" required>
                         </div>
                         <div class="mb-3">
                             <label for="nivelAcesso" class="form-label">Nível de Acesso</label>
-                            <select class="form-select" id="nivelAcesso" required>
-                                <option value="1">Administrador</option>
-                                <option value="2" selected>Padrão</option>
+                            <select name="tipo_usuario" class="form-select" id="nivelAcesso" required>
+                                <option value="admin">Administrador</option>
+                                <option value="padrao" selected>Usuário Padrão</option>
+                                <option value="voluntario">Voluntário</option>
                             </select>
                         </div>
                         <div class="modal-footer">
