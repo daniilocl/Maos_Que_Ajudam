@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center" href="/projeto_ong/index.php">
+    <a class="navbar-brand d-flex align-items-center" href="/Maos_Que_Ajudam/index.php">
       <img src="/Maos_Que_Ajudam/public/imagens/logo/Logo_MaosQueAjudam.jpg" 
            alt="Logo Mãos que Ajudam" 
            width="50" height="50" 

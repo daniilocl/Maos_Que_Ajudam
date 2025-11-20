@@ -25,7 +25,7 @@
         <div class="carousel-overlay"></div> <!-- overlay sobre toda a imagem -->
         <img src="public/imagens/logo/camisa.azul.png" class="d-block w-100" alt="Imagem 1">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="pagina1.php" class="text-white text-decoration-none">
+          <a href="/Maos_Que_Ajudam/index.php" class="text-white text-decoration-none">
             <h2 class="fw-bold">Quem Somos - Mãos que Ajudam</h2>
           </a>
           <h3>Unindo mãos para transformar vidas.</h3>
@@ -43,7 +43,7 @@
         <div class="carousel-overlay"></div>
         <img src="public/imagens/logo/doacoes/doacoes_carrossel.png" class="d-block w-100" alt="Imagem 2">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="pagina2.php" class="text-white text-decoration-none">
+          <a href="/Maos_Que_Ajudam/src/views/doacoes.php" class="text-white text-decoration-none">
             <h2 class="fw-bold">Doações</h2>
           </a>
           <h3>Sua contribuição transforma o futuro.</h3>
@@ -60,7 +60,7 @@ generosidade é o primeiro passo para um futuro melhor.</p>
         <div class="carousel-overlay"></div>
         <img src="public/imagens/logo/projetos/projetos.sala.png" class="d-block w-100" alt="Imagem 3">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="pagina3.php" class="text-white text-decoration-none">
+          <a href="/Maos_Que_Ajudam/src/views/projetos.php" class="text-white text-decoration-none">
             <h2 class="fw-bold"> Projetos – Educação e oportunidades para todos</h2>
           </a>
           <h3>Educar é semear o amanhã.</h3>
@@ -77,7 +77,7 @@ transformação.</p>
         <div class="carousel-overlay"></div>
         <img src="public/imagens/logo/voluntarios/voluntarios.azul.png" class="d-block w-100" alt="Imagem 4">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="pagina4.php" class="text-white text-decoration-none">
+          <a href="/Maos_Que_Ajudam/src/views/cadastro_voluntario.php" class="text-white text-decoration-none">
             <h2 class="fw-bold">Seja um Voluntário – Junte-se a nós</h2>
           </a>
           <h3>Mudar o mundo começa com uma atitude.</h3>
@@ -92,7 +92,7 @@ experiência que muda você e o mundo ao seu redor. </p>
         <div class="carousel-overlay"></div>
         <img src="public/imagens/logo/parcerias/parcerias.azul.png" class="d-block w-100" alt="Imagem 4">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="pagina4.php" class="text-white text-decoration-none">
+          <a href="/Maos_Que_Ajudam/src/views/contribuicoes.php" class="text-white text-decoration-none">
             <h2 class="fw-bold"> Contribuições e Parcerias – Juntos somos mais fortes</h2>
           </a>
           <h3>Parcerias que inspiram transformação.</h3>
