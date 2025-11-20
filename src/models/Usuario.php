@@ -127,14 +127,15 @@ class Usuario
         return $usuarios;
     }
 
-    public function criar($nome, $email, $senha, $tipo_usuario)
+    public function criar($nome, $cpf, $email, $senha, $tipo_usuario)
     {
-        $sql = "INSERT INTO Usuario (nome, email, senha, tipo_usuario, created_at) 
-            VALUES (?, ?, ?, ?, NOW())";
+        $sql = "INSERT INTO Usuario (nome, cpf, email, senha, tipo_usuario, created_at) 
+            VALUES (?, ?, ?, ?, ?, NOW())";
 
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssss", $nome, $email, $senha, $tipo_usuario);
-
+        var_dump($tipo_usuario);
+        $stmt->bind_param("sssss", $nome, $cpf, $email, $senha, $tipo_usuario);
+        var_dump($nome, $cpf, $email, $senha, $tipo_usuario);
         return $stmt->execute();
     }
 
