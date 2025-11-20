@@ -29,22 +29,28 @@
 <section style="background: linear-gradient(135deg,#3b82f6,#1e40af); color:white; padding:80px 0; text-align:center;">
   <h2 style="font-size:2.8em; font-weight:700; margin-bottom:20px;">Transformando Vidas com Solidariedade</h2>
   <p style="font-size:1.2em; opacity:0.9; max-width:700px; margin:0 auto 30px;">Cada gesto de amor faz diferença. Junte-se à nossa corrente do bem e ajude a transformar vidas hoje mesmo.</p>
-  <a href="#" class="btn btn-primary">Faça Parte</a>
+  <a href="/Maos_Que_Ajudam/src/views/cadastro_voluntario.php" class="btn btn-primary">Faça Parte</a>
 </section>
 
 <!-- SEÇÃO DE CARDS / INFORMAÇÕES -->
 <section style="padding:60px 0; background:#f5f5f5;">
   <div class="container" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
     <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-      <h3 style="font-weight:600; margin-bottom:15px;">Quem Somos</h3>
+      <a href="/Maos_Que_Ajudam/index.php">
+        <h3 style="font-weight:600; margin-bottom:15px;">Quem Somos</h3>
+      </a>
       <p>Organização sem fins lucrativos dedicada a criar impacto social positivo e transformação na vida das pessoas.</p>
     </div>
     <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-      <h3 style="font-weight:600; margin-bottom:15px;">Projetos</h3>
+      <a href="/Maos_Que_Ajudam/src/views/projetos.php">
+        <h3 style="font-weight:600; margin-bottom:15px;">Projetos</h3>
+      </a>
       <p>Desenvolvemos iniciativas sociais focadas em educação, saúde e apoio à comunidade carente.</p>
     </div>
     <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-      <h3 style="font-weight:600; margin-bottom:15px;">Como Ajudar</h3>
+      <a href="/Maos_Que_Ajudam/src/views/doacoes.php">
+        <h3 style="font-weight:600; margin-bottom:15px;">Como Ajudar</h3>
+      </a>
       <p>Saiba como contribuir e participar das nossas ações, seja como voluntário ou doador.</p>
     </div>
   </div>
