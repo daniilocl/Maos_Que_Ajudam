@@ -185,6 +185,10 @@ if (isset($_GET['busca']) && $_GET['busca'] !== '') {
                             <input type="text" name="nome" class="form-control" id="nomeUsuario" required>
                         </div>
                         <div class="mb-3">
+                            <label for="cpfUsuario" class="form-label">CPF</label>
+                            <input type="text" name="cpf" class="form-control" id="cpfUsuario" required>
+                        </div>
+                        <div class="mb-3">
                             <label for="emailUsuario" class="form-label">Email</label>
                             <input type="email" name="email" class="form-control" id="emailUsuario" required>
                         </div>
@@ -196,7 +200,7 @@ if (isset($_GET['busca']) && $_GET['busca'] !== '') {
                             <label for="nivelAcesso" class="form-label">Nível de Acesso</label>
                             <select name="tipo_usuario" class="form-select" id="nivelAcesso" required>
                                 <option value="admin">Administrador</option>
-                                <option value="padrao" selected>Usuário Padrão</option>
+                                <option value="cliente" selected>Usuário Padrão</option>
                                 <option value="voluntario">Voluntário</option>
                             </select>
                         </div>
