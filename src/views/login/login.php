@@ -11,11 +11,24 @@
 </head>
 
 <body>
+<?php
+  session_start();
+  require_once __DIR__ . '/../../utils/notification_helper.php';
+  exibirNotificationSessao(); 
+  
+  unset($_SESSION['cadastro_sucesso']); 
+?>
   <div class="desktop-layout">
     <div class="container" id="container">
       <div class="desktop-layout">
+        <?php if ($mensagem_sucesso): ?>
+          <div
+            style="background-color: #d4edda; color: #155724; padding: 15px; margin-bottom: 20px; border-radius: 5px; text-align: center;">
+            <?php echo htmlspecialchars($mensagem_sucesso); ?>
+          </div>
+        <?php endif; ?>
         <div class="form-container register-container">
-        <form action="../../controllers/cadastro.php" method="POST">
+          <form action="../../controllers/cadastro.php" method="POST">
             <h1>Crie sua conta</h1>
             <input type="text" placeholder="Nome" name="nome" required />
             <input type="text" placeholder="CPF" name="cpf" required />
@@ -29,8 +42,8 @@
         <div class="form-container login-container">
           <form action="../../controllers/login.php" method="POST">
             <h1>Faça seu login</h1>
-            <input type="email" placeholder="Email" name="email" required/>
-            <input type="password" placeholder="Senha" name="senha" required/>
+            <input type="email" placeholder="Email" name="email" required />
+            <input type="password" placeholder="Senha" name="senha" required />
             <div class="content">
               <div class="checkbox">
                 <input type="checkbox" id="checkbox" />

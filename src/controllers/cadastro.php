@@ -1,17 +1,13 @@
 <?php
-// src/controllers/cadastro.php
-
-// Inclusão de dependências (Caminhos relativos CORRETOS)
-// Saia de controllers/ (..), entre em db/ (db/)
 require_once __DIR__ . '/../db/connection.php';
-require_once __DIR__ . '/../models/Usuario.php'; 
+require_once __DIR__ . '/../models/Usuario.php';
+require_once __DIR__ . '/../utils/notification_helper.php';
 
 session_start();
 $usuarioModel = new Usuario($conn);
 $erro = '';
-$BASE_URL = "/Maos_Que_Ajudam/src"; // Define a URL base para redirecionamentos
+$BASE_URL = "/Maos_Que_Ajudam/src";
 
-// Variáveis para preencher o formulário em caso de erro
 $nome = $cpf = $email = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -30,9 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         // Chama o Model para cadastrar
         if ($usuarioModel->cadastrarUsuario($nome, $cpf, $email, $senha)) {
-            // Sucesso: redireciona para o login com a mensagem de sucesso
-            $_SESSION['cadastro_sucesso'] = "Cadastro realizado com sucesso! Faça login.";
-            // Redirecionamento CORRIGIDO/CONFIRMADO para views/login/login.php
+            setNotification('sucesso', 'Cadastro Realizado! 🎉', 'Sua conta foi criada com sucesso. Faça login para continuar.');
             header("Location: {$BASE_URL}/views/login/login.php"); 
             exit;
         } else {
