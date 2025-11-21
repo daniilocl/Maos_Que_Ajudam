@@ -15,6 +15,7 @@
   <!-- Header -->
   <?php include 'src/components/header.php'; ?>
 
+
   <!-- Carrossel -->
   <div id="carouselMaosQueAjudam" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -22,15 +23,16 @@
       <!-- Slide 1 -->
       <div class="carousel-item active position-relative">
         <div class="carousel-overlay"></div> <!-- overlay sobre toda a imagem -->
-        <img src="public/imagens/logo/Logo_MaosQueAjudam.jpg" class="d-block w-100" alt="Imagem 1">
+        <img src="public/imagens/logo/camisa.azul.png" class="d-block w-100" alt="Imagem 1">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="pagina1.php" class="text-white text-decoration-none">
+          <a href="/Maos_Que_Ajudam/index.php" class="text-white text-decoration-none">
             <h2 class="fw-bold">Quem Somos - Mãos que Ajudam</h2>
           </a>
           <h3>Unindo mãos para transformar vidas.</h3>
           <p>
             A ONG Mãos que Ajudam nasceu com o propósito de levar solidariedade, empatia e esperança a quem mais
-            precisa. Acreditamos que pequenas atitudes podem gerar grandes transformações. Nosso compromisso é ajudar
+            precisa. Acreditamo
+            s que pequenas atitudes podem gerar grandes transformações. Nosso compromisso é ajudar
             pessoas de todas as idades e realidades, oferecendo oportunidades, acolhimento e apoio humano. Aqui, cada
             gesto conta — porque juntos, somos mais fortes.</p>
         </div>
@@ -39,39 +41,66 @@
       <!-- Slide 2 -->
       <div class="carousel-item position-relative">
         <div class="carousel-overlay"></div>
-        <img src="imagens/imagem2.jpg" class="d-block w-100" alt="Imagem 2">
+        <img src="public/imagens/logo/doacoes/doacoes_carrossel.png" class="d-block w-100" alt="Imagem 2">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="pagina2.php" class="text-white text-decoration-none">
-            <h2 class="fw-bold">Título do Segundo Tópico</h2>
+          <a href="/Maos_Que_Ajudam/src/views/doacoes.php" class="text-white text-decoration-none">
+            <h2 class="fw-bold">Doações</h2>
           </a>
-          <h3>Subtítulo</h3>
-          <p>Breve descrição sobre o segundo tópico.</p>
+          <h3>Sua contribuição transforma o futuro.</h3>
+          <p>Doe amor, doe esperança,<p> doe o que puder. <p>
+<p>A sua contribuição faz a diferença! Na Mãos que Ajudam, você pode doar qualquer valor de forma única ou
+aderir a um plano mensal de contribuição, garantindo que nossos projetos continuem mudando vidas todos os
+dias. Cada real doado é convertido em oportunidades, alimentos, cursos e sorrisos. Participe, sua
+generosidade é o primeiro passo para um futuro melhor.</p>
         </div>
       </div>
 
       <!-- Slide 3 -->
       <div class="carousel-item position-relative">
         <div class="carousel-overlay"></div>
-        <img src="imagens/imagem3.jpg" class="d-block w-100" alt="Imagem 3">
+        <img src="public/imagens/logo/projetos/projetos.sala.png" class="d-block w-100" alt="Imagem 3">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="pagina3.php" class="text-white text-decoration-none">
-            <h2 class="fw-bold">Título do Terceiro Tópico</h2>
+          <a href="/Maos_Que_Ajudam/src/views/projetos.php" class="text-white text-decoration-none">
+            <h2 class="fw-bold"> Projetos – Educação e oportunidades para todos</h2>
           </a>
-          <h3>Subtítulo</h3>
-          <p>Pequena explicação sobre este tema.</p>
+          <h3>Educar é semear o amanhã.</h3>
+          <p>Nossos projetos sociais têm como foco oferecer cursos gratuitos para crianças do ensino fundamental,
+adolescentes do ensino médio e adultos que buscam uma nova chance de aprendizado. Levamos educação e
+capacitação a locais onde o acesso ainda é limitado, promovendo a inclusão social e o desenvolvimento
+pessoal. Aqui, cada curso é uma porta aberta para o futuro, e o conhecimento é o caminho da
+transformação.</p>
         </div>
       </div>
 
       <!-- Slide 4 -->
       <div class="carousel-item position-relative">
         <div class="carousel-overlay"></div>
-        <img src="imagens/imagem4.jpg" class="d-block w-100" alt="Imagem 4">
+        <img src="public/imagens/logo/voluntarios/voluntarios.azul.png" class="d-block w-100" alt="Imagem 4">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="pagina4.php" class="text-white text-decoration-none">
-            <h2 class="fw-bold">Título do Quarto Tópico</h2>
+          <a href="/Maos_Que_Ajudam/src/views/cadastro_voluntario.php" class="text-white text-decoration-none">
+            <h2 class="fw-bold">Seja um Voluntário – Junte-se a nós</h2>
           </a>
-          <h3>Subtítulo</h3>
-          <p>Descrição curta sobre o conteúdo do quarto slide.</p>
+          <h3>Mudar o mundo começa com uma atitude.</h3>
+          <p>Você pode fazer parte dessa corrente do bem! A Mãos que Ajudam conta com o apoio de voluntários
+dedicados que doam tempo, energia e amor para transformar vidas. Seja ajudando em eventos, organizando campanhas ou participando dos projetos, seu trabalho faz a diferença. Cadastre-se e venha viver essa
+experiência que muda você e o mundo ao seu redor. </p>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="carousel-item position-relative">
+        <div class="carousel-overlay"></div>
+        <img src="public/imagens/logo/parcerias/parcerias.azul.png" class="d-block w-100" alt="Imagem 4">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+          <a href="/Maos_Que_Ajudam/src/views/contribuicoes.php" class="text-white text-decoration-none">
+            <h2 class="fw-bold"> Contribuições e Parcerias – Juntos somos mais fortes</h2>
+          </a>
+          <h3>Parcerias que inspiram transformação.</h3>
+          <p>Acreditamos no poder da união! A Mãos que Ajudam tem o orgulho de contar com parcerias sólidas que
+fortalecem nosso impacto social — entre elas, as prefeituras de Ferraz de Vasconcelos, Suzano e
+Itaquaquecetuba, o time do Corinthians e a Escola Objetivo. Essas alianças nos permitem alcançar mais
+pessoas, ampliar nossos projetos e multiplicar o bem. Porque quando caminhamos juntos, chegamos mais
+longe.</p>
         </div>
       </div>
 
@@ -94,6 +123,7 @@
       <button type="button" data-bs-target="#carouselMaosQueAjudam" data-bs-slide-to="1"></button>
       <button type="button" data-bs-target="#carouselMaosQueAjudam" data-bs-slide-to="2"></button>
       <button type="button" data-bs-target="#carouselMaosQueAjudam" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#carouselMaosQueAjudam" data-bs-slide-to="4"></button>
     </div>
   </div>
 
@@ -101,8 +131,6 @@
   <?php include 'src/components/footer.php'; ?>
 
   
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -1,0 +1,232 @@
+/* --- Estilos Gerais --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Fundo muito claro */
+    color: #343a40;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+
+/* --- Filtros (Botões de Categoria) --- */
+.filtro-acoes {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filtro-acoes p {
+    margin: 0 15px 0 0;
+    font-size: 1.1em;
+}
+
+.botoes-filtro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-filtro {
+    background-color: #e9ecef;
+    color: #495867;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-filtro:hover {
+    background-color: #adb5bd;
+}
+
+.btn-filtro.active {
+    background-color: #495867;
+    color: white;
+}
+
+/* --- Tabela/Lista de Projetos --- */
+.tabela-projetos {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1.5fr 1.5fr; /* 4 colunas */
+    gap: 1px; /* Espaço entre as linhas */
+    background-color: #e9ecef; /* Cor de fundo para as linhas */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho-tabela {
+    display: contents; /* Mantém a estrutura de grid */
+    font-weight: bold;
+    background-color: #6c757d;
+    color: black;
+    padding: 15px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.cabecalho-tabela > div {
+    padding: 15px;
+}
+
+/* Linhas de Projeto */
+.linha-projeto {
+    display: contents;
+    background-color: white;
+    transition: background-color 0.2s;
+}
+
+.linha-projeto:hover > div {
+    background-color: #f0f0f0; /* Suave destaque ao passar o mouse */
+}
+
+.linha-projeto > div {
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+.linha-projeto:last-child > div {
+    border-bottom: none;
+}
+
+/* Estilos Específicos das Colunas */
+.titulo-projeto {
+    font-weight: 600;
+    color: #343a40;
+}
+
+/* Badges de Área */
+.area-projeto {
+    font-weight: 500;
+}
+
+.area-projeto i {
+    margin-right: 5px;
+}
+
+.area-educacao { color: #007bff; } /* Azul */
+.area-saude { color: #dc3545; } /* Vermelho */
+.area-acolhimento { color: #ffc107; } /* Amarelo/Laranja */
+.area-digital { color: #20c997; } /* Ciano/Verde */
+
+/* Status (Tags coloridas) */
+.status-projeto {
+    font-weight: bold;
+}
+
+.status-urgente {
+    color: #dc3545; /* Vermelho */
+    background-color: #f8d7da;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status-aberto {
+    color: #28a745; /* Verde */
+    background-color: #d4edda;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status-concluido {
+    color: #6c757d; /* Cinza */
+    background-color: #e2e6ea;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Botões de Ação */
+.btn-detalhe {
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    font-size: 0.9em;
+}
+
+.btn-detalhe:hover {
+    background-color: #5a6268;
+}
+
+.cta-principal {
+    background-color: #007bff; /* Azul primário para CTA principal */
+}
+
+.cta-principal:hover {
+    background-color: #0056b3;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: #adb5bd;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+    .tabela-projetos {
+        grid-template-columns: 1fr; /* Coluna única em mobile */
+    }
+    .cabecalho-tabela {
+        display: none; /* Esconde o cabeçalho da tabela */
+    }
+    .linha-projeto {
+        border-bottom: 5px solid #dee2e6; /* Separador maior */
+        margin-bottom: 15px;
+        display: block;
+        padding: 15px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .linha-projeto > div {
+        border-bottom: 1px dashed #eee;
+        padding: 8px 0;
+        display: block;
+    }
+    .linha-projeto > div:before {
+        font-weight: bold;
+        color: #6c757d;
+        display: block;
+        font-size: 0.8em;
+    }
+    
+    /* Adiciona Labels no Mobile */
+    .linha-projeto > div:nth-child(1):before { content: "PROJETO:"; }
+    .linha-projeto > div:nth-child(2):before { content: "ÁREA:"; }
+    .linha-projeto > div:nth-child(3):before { content: "STATUS:"; }
+    .linha-projeto > div:nth-child(4):before { content: "AÇÃO:"; }
+
+    .status-projeto {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    .acao-projeto {
+        margin-top: 15px;
+        text-align: center;
+    }
+}
