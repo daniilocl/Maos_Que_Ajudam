@@ -4,6 +4,7 @@
 // Inclusão de dependências
 require_once __DIR__ . '/../db/connection.php';
 require_once __DIR__ . '/../models/Usuario.php'; 
+require_once __DIR__ . '/../utils/notification_helper.php'; // Inclua o helper de notificação
 
 session_start();
 // Usa a classe Usuario (Model central)
@@ -33,16 +34,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($usuarioModel->cadastrarVoluntario($nome, $cpf, $email, $senha)) {
             // Sucesso: redireciona para o login com a mensagem
             $_SESSION['cadastro_sucesso'] = "Cadastro de voluntário realizado! Faça login.";
+            setNotification('sucesso', 'Cadastro Realizado!', 'Você foi cadastrado com sucesso! Faça login para continuar.');
             header("Location: {$BASE_URL}/views/login/login.php"); 
             exit;
         } else {
             // Falha: e-mail/CPF duplicado ou erro de banco
             $erro = "Erro ao cadastrar. O e-mail ou CPF já podem estar em uso, ou ocorreu um erro no servidor.";
+            setNotification('erro', 'Erro no Cadastro', $erro); // Chama a função de notificação com erro
         }
     }
 }
 
+// Exibe qualquer notificação da sessão
+exibirNotificationSessao(); // Chama a função para exibir a notificação
+
 // Se houver erro, a execução continua para a View.
-// CORREÇÃO FINAL ROBUSTA (Linha 46): Usa dirname(__DIR__) para obter o caminho de 'src/' 
-// e garante que a View seja incluída a partir daí.
 require_once dirname(__DIR__) . '/views/cadastro_voluntario.php';
