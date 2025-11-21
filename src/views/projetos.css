@@ -1,314 +1,232 @@
-/* public/css/projetos.css */
-
-/* Variáveis de Cores */
-:root {
-    --cor-primaria: #0d6efd;
-    --cor-secundaria: #6c757d;
-    --cor-sucesso: #198754;
-    --cor-warning: #ffc107;
-    --cor-danger: #dc3545;
-    --cor-light: #f8f9fa;
-    --cor-dark: #212529;
-    --cor-border: #e0e0e0;
-}
-
-/* Estilos Gerais */
+/* --- Estilos Gerais --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-}
-
-main {
-    min-height: calc(100vh - 200px);
-}
-
-/* Seção Hero de Texto */
-.texto-hero {
-    text-align: center;
-    padding: 2rem 0;
-    background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(108, 117, 125, 0.05) 100%);
-    border-radius: 10px;
-    margin-bottom: 3rem !important;
-}
-
-.titulo-principal {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--cor-dark);
-    margin-bottom: 0.5rem;
-}
-
-.subtitulo {
-    font-size: 1.1rem;
-    color: var(--cor-secundaria);
     margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Fundo muito claro */
+    color: #343a40;
 }
 
-/* Botões de Filtro */
-.btn-filtro {
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+
+/* --- Filtros (Botões de Categoria) --- */
+.filtro-acoes {
+    margin-bottom: 30px;
+    padding: 15px;
     background-color: white;
-    color: var(--cor-dark);
-    border: 2px solid var(--cor-border);
-    border-radius: 25px;
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: inline-flex;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filtro-acoes p {
+    margin: 0 15px 0 0;
+    font-size: 1.1em;
+}
+
+.botoes-filtro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-filtro {
+    background-color: #e9ecef;
+    color: #495867;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .btn-filtro:hover {
-    border-color: var(--cor-primaria);
-    color: var(--cor-primaria);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+    background-color: #adb5bd;
 }
 
-.btn-filtro-ativo {
-    background-color: var(--cor-primaria);
+.btn-filtro.active {
+    background-color: #495867;
     color: white;
-    border-color: var(--cor-primaria);
 }
 
-/* Card de Projeto */
-.projeto-card {
-    border: 1px solid var(--cor-border);
-    border-radius: 10px;
+/* --- Tabela/Lista de Projetos --- */
+.tabela-projetos {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1.5fr 1.5fr; /* 4 colunas */
+    gap: 1px; /* Espaço entre as linhas */
+    background-color: #e9ecef; /* Cor de fundo para as linhas */
+    border-radius: 8px;
     overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.projeto-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+.cabecalho-tabela {
+    display: contents; /* Mantém a estrutura de grid */
+    font-weight: bold;
+    background-color: #6c757d;
+    color: black;
+    padding: 15px;
+    font-size: 0.9em;
+    text-transform: uppercase;
 }
 
-/* Imagem do Projeto */
-.projeto-imagem-container {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--cor-light);
-    height: 200px;
+.cabecalho-tabela > div {
+    padding: 15px;
 }
 
-.projeto-imagem {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+/* Linhas de Projeto */
+.linha-projeto {
+    display: contents;
+    background-color: white;
+    transition: background-color 0.2s;
 }
 
-.projeto-card:hover .projeto-imagem {
-    transform: scale(1.05);
+.linha-projeto:hover > div {
+    background-color: #f0f0f0; /* Suave destaque ao passar o mouse */
 }
 
-/* Overlay da Imagem */
-.overlay-projeto {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+.linha-projeto > div {
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6;
     display: flex;
     align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    font-size: 0.95em;
 }
 
-.projeto-card:hover .overlay-projeto {
-    opacity: 1;
+.linha-projeto:last-child > div {
+    border-bottom: none;
 }
 
-.overlay-projeto .btn {
-    background-color: var(--cor-primaria);
-    border: none;
-    color: white;
-    padding: 0.75rem 1.5rem;
+/* Estilos Específicos das Colunas */
+.titulo-projeto {
     font-weight: 600;
+    color: #343a40;
 }
 
-.overlay-projeto .btn:hover {
-    background-color: #0b5ed7;
-    transform: scale(1.05);
-}
-
-/* Badge de Status */
-.badge-status {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    z-index: 1;
-}
-
-.badge-concluido {
-    background-color: var(--cor-sucesso);
-    color: white;
-}
-
-.badge-em-progresso {
-    background-color: var(--cor-warning);
-    color: #000;
-}
-
-.badge-parado {
-    background-color: var(--cor-danger);
-    color: white;
-}
-
-/* Corpo do Card */
-.projeto-card .card-body {
-    padding: 1.5rem;
-}
-
-.projeto-card .card-title {
-    color: var(--cor-dark);
-    font-weight: 600;
-    font-size: 1.2rem;
-    line-height: 1.4;
-}
-
-.projeto-card .card-text {
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.projeto-card .card-footer {
-    border-top: 1px solid var(--cor-border);
-    padding: 1rem 1.5rem;
-}
-
-/* Badges de Categoria */
-.projeto-card .badge.bg-secondary {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    background-color: var(--cor-light) !important;
-    color: var(--cor-primaria) !important;
-    border: 1px solid var(--cor-primaria);
-}
-
-/* Tecnologias */
-.tecnologias {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.badge-tecnologia {
-    background-color: #e7f1ff;
-    color: var(--cor-primaria);
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    border-radius: 15px;
+/* Badges de Área */
+.area-projeto {
     font-weight: 500;
 }
 
-/* Seção CTA */
-.cta-section {
-    background: linear-gradient(135deg, var(--cor-primaria) 0%, #0b5ed7 100%);
-    color: white;
-    padding: 3rem 2rem;
-    border-radius: 10px;
+.area-projeto i {
+    margin-right: 5px;
 }
 
-.cta-section h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+.area-educacao { color: #007bff; } /* Azul */
+.area-saude { color: #dc3545; } /* Vermelho */
+.area-acolhimento { color: #ffc107; } /* Amarelo/Laranja */
+.area-digital { color: #20c997; } /* Ciano/Verde */
+
+/* Status (Tags coloridas) */
+.status-projeto {
+    font-weight: bold;
 }
 
-.cta-section p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-}
-
-.cta-section .btn-lg {
-    background-color: white;
-    color: var(--cor-primaria);
-    border: none;
-    padding: 0.75rem 2rem;
-    font-weight: 600;
-}
-
-.cta-section .btn-lg:hover {
-    background-color: var(--cor-light);
-    transform: translateY(-2px);
-}
-
-/* Animação de Entrada */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Alerta */
-.alert-info {
-    background-color: #d1ecf1;
-    color: #0c5460;
-    border: 1px solid #bee5eb;
+.status-urgente {
+    color: #dc3545; /* Vermelho */
+    background-color: #f8d7da;
+    padding: 5px 10px;
     border-radius: 5px;
-    padding: 1.5rem;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .titulo-principal {
-        font-size: 2rem;
-    }
-
-    .subtitulo {
-        font-size: 1rem;
-    }
-
-    .projeto-card {
-        margin-bottom: 1rem;
-    }
-
-    .cta-section {
-        padding: 2rem 1rem;
-    }
-
-    .cta-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .btn-filtro {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
+.status-aberto {
+    color: #28a745; /* Verde */
+    background-color: #d4edda;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-@media (max-width: 576px) {
-    .titulo-principal {
-        font-size: 1.5rem;
+.status-concluido {
+    color: #6c757d; /* Cinza */
+    background-color: #e2e6ea;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Botões de Ação */
+.btn-detalhe {
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    font-size: 0.9em;
+}
+
+.btn-detalhe:hover {
+    background-color: #5a6268;
+}
+
+.cta-principal {
+    background-color: #007bff; /* Azul primário para CTA principal */
+}
+
+.cta-principal:hover {
+    background-color: #0056b3;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: #adb5bd;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+    .tabela-projetos {
+        grid-template-columns: 1fr; /* Coluna única em mobile */
+    }
+    .cabecalho-tabela {
+        display: none; /* Esconde o cabeçalho da tabela */
+    }
+    .linha-projeto {
+        border-bottom: 5px solid #dee2e6; /* Separador maior */
+        margin-bottom: 15px;
+        display: block;
+        padding: 15px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .linha-projeto > div {
+        border-bottom: 1px dashed #eee;
+        padding: 8px 0;
+        display: block;
+    }
+    .linha-projeto > div:before {
+        font-weight: bold;
+        color: #6c757d;
+        display: block;
+        font-size: 0.8em;
+    }
+    
+    /* Adiciona Labels no Mobile */
+    .linha-projeto > div:nth-child(1):before { content: "PROJETO:"; }
+    .linha-projeto > div:nth-child(2):before { content: "ÁREA:"; }
+    .linha-projeto > div:nth-child(3):before { content: "STATUS:"; }
+    .linha-projeto > div:nth-child(4):before { content: "AÇÃO:"; }
+
+    .status-projeto {
+        display: inline-block;
+        margin-top: 5px;
     }
 
-    .subtitulo {
-        font-size: 0.9rem;
-    }
-
-    .tecnologias {
-        gap: 0.25rem;
-    }
-
-    .badge-tecnologia {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.6rem;
+    .acao-projeto {
+        margin-top: 15px;
+        text-align: center;
     }
 }

@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mãos Que Ajudam</title>
-
-  <!-- Google Fonts: Outfit -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS Reset / Base -->
-  <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:'Outfit', sans-serif;}
-    body {background:#f5f5f5; color:#111;}
-    a {text-decoration:none; color:inherit;}
-    ul {list-style:none;}
-    h1,h2,h3,h4,h5,h6 {margin:0; line-height:1.2;}
-    p {margin:0; line-height:1.6;}
-    .container {width:90%; max-width:1200px; margin:0 auto;}
-    .btn {display:inline-block; padding:10px 20px; border-radius:6px; font-weight:600; transition:0.3s; cursor:pointer; text-align:center;}
-    .btn-primary {background:linear-gradient(135deg, #3b82f6, #1e40af); color:white; border:none;}
-    .btn-primary:hover {filter:brightness(1.1);}
-  </style>
+  <title>Document</title>
 </head>
 <body>
+  
 <!-- HERO SECTION -->
+<style>
+  /* Forçar links do footer em preto */
+  a {
+    color: #000000ff !important;
+    opacity: 1 !important;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a:hover {
+    color: #000000ff !important;
+    opacity: 0.85 !important;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
 <section style="background: linear-gradient(135deg,#3b82f6,#1e40af); color:white; padding:80px 0; text-align:center;">
   <h2 style="font-size:2.8em; font-weight:700; margin-bottom:20px;">Transformando Vidas com Solidariedade</h2>
   <p style="font-size:1.2em; opacity:0.9; max-width:700px; margin:0 auto 30px;">Cada gesto de amor faz diferença. Junte-se à nossa corrente do bem e ajude a transformar vidas hoje mesmo.</p>
@@ -36,7 +33,7 @@
 <section style="padding:60px 0; background:#f5f5f5;">
   <div class="container" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
     <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-      <a href="/Maos_Que_Ajudam/index.php">
+      <a class="" href="/Maos_Que_Ajudam/index.php">
         <h3 style="font-weight:600; margin-bottom:15px;">Quem Somos</h3>
       </a>
       <p>Organização sem fins lucrativos dedicada a criar impacto social positivo e transformação na vida das pessoas.</p>
@@ -82,9 +79,9 @@
     <div style="display:flex; flex-direction:column-reverse flex-md-row; justify-content:space-between; align-items:center; gap:20px;">
       <p style="opacity:0.75; font-size:14px;">© 2025 <strong>Mãos Que Ajudam</strong>. Todos os direitos reservados.</p>
       <div style="display:flex; gap:15px;">
-        <a href="#"><svg width="24" fill="white" style="opacity:0.85;" viewBox="0 0 16 16"><path d="M8 0C5.83..." /></svg></a>
-        <a href="#"><svg width="24" fill="white" style="opacity:0.85;" viewBox="0 0 16 16"><path d="M5.026..." /></svg></a>
-        <a href="#"><svg width="24" fill="white" style="opacity:0.85;" viewBox="0 0 448 512"><path d="M100.28..." /></svg></a>
+        <a href="#" aria-label="Facebook" style="color:inherit; opacity:0.85; font-size:24px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter" style="color:inherit; opacity:0.85; font-size:24px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram" style="color:inherit; opacity:0.85; font-size:24px;"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </div>
@@ -101,6 +98,9 @@
     </span>
     <span class="BG"></span>
 </button>
+ 
+<!-- Scripts: carregar Bootstrap JS uma vez -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

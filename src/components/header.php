@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+
+<style>
+</style>
+<style>
+  /* Forçar texto do header em branco */
+  .navbar { color: #ffffff; }
+  .navbar .navbar-brand,
+  .navbar .navbar-brand span { color: #ffffff !important; }
+  .navbar .nav-link { color: #ffffff !important; }
+  .navbar .nav-link.active { color: #ffffff !important; font-weight:600; }
+  /* Mantém itens do dropdown com cor padrão (escura) para legibilidade sobre fundo branco */
+  .navbar .dropdown-item { color: inherit; }
+  /* Ajusta botão de login para texto branco */
+  .navbar .btn-login { color: #ffffff !important; }
+</style>
+</style>
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
@@ -30,9 +56,9 @@
       </ul>
     </div>
 
-    <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn btn-light text-primary ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
+    <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
   </div>
 </nav>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

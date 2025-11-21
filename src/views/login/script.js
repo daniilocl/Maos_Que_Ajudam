@@ -26,14 +26,3 @@ showLogin.addEventListener("click", e => {
   mobileRegister.style.display = "none";
   mobileLogin.style.display = "block";
 });
-
-window.addEventListener("load", function() {
-  const loader = document.getElementById("loader");
-  const content = document.getElementById("content");
-
-  // Oculta o loader
-  loader.style.display = "none";
-
-  // Mostra o conteúdo da página
-  content.style.display = "block";
-});
