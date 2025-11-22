@@ -82,10 +82,26 @@ a:hover {
 }
 
 .button_voltar {
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 20px;
   padding: 10px;
   margin: -5px;
+  margin-top: 10px;
   background-color: #919cc2;
   border-color: #919cc2;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0px;
+  padding: 12px 80px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.button_voltar:hover {
+  background-color: #ffffff;
+  color: #919cc2;
 }
 
 button {
@@ -364,7 +380,8 @@ input {
 
   form {
     padding: 20px;
-    height: auto;
+    margin: 18px 0 0 0;
+    display: inline-block;
   }
 
   button {
@@ -398,19 +415,19 @@ input {
 }
 
 #loader {
-  position: fixed;       /* Fixa o loader na tela inteira */
+  position: fixed; /* Fixa o loader na tela inteira */
   top: 0;
   left: 0;
-  width: 100%;           /* Ocupa toda a largura */
-  height: 100%;          /* Ocupa toda a altura */
-  background: #191e2e;   /* Cor de fundo enquanto carrega */
-  display: flex;          /* Ativa flexbox */
+  width: 100%; /* Ocupa toda a largura */
+  height: 100%; /* Ocupa toda a altura */
+  background: #191e2e; /* Cor de fundo enquanto carrega */
+  display: flex; /* Ativa flexbox */
   justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;     /* Centraliza verticalmente */
-  z-index: 9999;          /* Fica acima de tudo */
+  align-items: center; /* Centraliza verticalmente */
+  z-index: 9999; /* Fica acima de tudo */
 }
 
-/* From Uiverse.io by AatreyuShau */ 
+/* From Uiverse.io by AatreyuShau */
 .loader {
   scale: 0.75;
   position: relative;
@@ -524,4 +541,3 @@ input {
     opacity: 0;
   }
 }
-

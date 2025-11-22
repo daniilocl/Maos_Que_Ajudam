@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-  <link href="/projeto_ong/public/css/style.css" rel="stylesheet">
+  <link href="/Maos_Que_Ajudam/public/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="login.css" />
   <title>Registro / Login</title>
 </head>
@@ -15,13 +15,11 @@
   session_start();
   require_once __DIR__ . '/../../utils/notification_helper.php';
   exibirNotificationSessao(); 
-  
-  unset($_SESSION['cadastro_sucesso']); 
 ?>
   <div class="desktop-layout">
     <div class="container" id="container">
       <div class="desktop-layout">
-        <?php if ($mensagem_sucesso): ?>
+        <?php if (!empty($mensagem_sucesso)): ?>
           <div
             style="background-color: #d4edda; color: #155724; padding: 15px; margin-bottom: 20px; border-radius: 5px; text-align: center;">
             <?php echo htmlspecialchars($mensagem_sucesso); ?>
@@ -30,12 +28,13 @@
         <div class="form-container register-container">
           <form action="../../controllers/cadastro.php" method="POST">
             <h1>Crie sua conta</h1>
-            <input type="text" placeholder="Nome" name="nome" required />
+            <input type="text" placeholder="Nome completo" name="nome" required />
             <input type="text" placeholder="CPF" name="cpf" required />
             <input type="email" placeholder="Email" name="email" required />
             <input type="password" placeholder="Senha" name="senha" required />
             <input type="password" placeholder="Confirme a Senha" name="confirma_senha" required />
             <button type="submit">Cadastrar</button>
+            <a class="button_voltar btn btn-secondary mt-3 d-inline-block rounded-pill" href="/Maos_Que_Ajudam/index.php">Voltar</a>
           </form>
         </div>
 
@@ -53,15 +52,13 @@
                 <a href="#">Esqueceu sua senha?</a>
               </div>
             </div>
-            <a href="/Maos_Que_Ajudam/index.php">
               <button type="submit">Login</button>
-            </a>
             <span>ou use sua conta</span>
             <div class="social-container">
               <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
               <a href="#" class="social"><i class="lni lni-google"></i></a>
             </div>
-            <button class="button_voltar"><a href="/Maos_Que_Ajudam/index.php">Voltar</a></button>
+            <a class="button_voltar btn btn-secondary mt-3 d-inline-block rounded-pill" href="/Maos_Que_Ajudam/index.php">Voltar</a>
           </form>
         </div>
 

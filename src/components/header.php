@@ -8,14 +8,6 @@
 </head>
 <body>
 
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
-?>
-
-<style>
-</style>
 <style>
   /* Forçar texto do header em branco */
   .navbar { color: #ffffff; }
@@ -62,18 +54,7 @@ if (session_status() === PHP_SESSION_NONE) {
       </ul>
     </div>
 
-    <?php if (isset($_SESSION['user_id'])): ?>
-      <div class="dropdown ms-lg-3 mt-2 mt-lg-0">
-        <a class="btn btn-light text-primary dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          <?php echo htmlspecialchars($_SESSION['user_nome'] ?? 'Usuário'); ?>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-          <li><a class="dropdown-item" href="/Maos_Que_Ajudam/src/controllers/logout.php">Sair</a></li>
-        </ul>
-      </div>
-    <?php else: ?>
-      <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
-    <?php endif; ?>
+    <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn bg-white text-black ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
   </div>
 </nav>
 

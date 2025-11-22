@@ -1,93 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  
-<!-- HERO SECTION -->
-<style>
-  /* Forçar links do footer em preto */
-  a {
-    color: #000000ff !important;
-    opacity: 1 !important;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  a:hover {
-    color: #000000ff !important;
-    opacity: 0.85 !important;
-    text-decoration: none;
-    cursor: pointer;
-  }
-</style>
-<section style="background: linear-gradient(135deg,#3b82f6,#1e40af); color:white; padding:80px 0; text-align:center;">
-  <h2 style="font-size:2.8em; font-weight:700; margin-bottom:20px;">Transformando Vidas com Solidariedade</h2>
-  <p style="font-size:1.2em; opacity:0.9; max-width:700px; margin:0 auto 30px;">Cada gesto de amor faz diferença. Junte-se à nossa corrente do bem e ajude a transformar vidas hoje mesmo.</p>
-  <a href="/Maos_Que_Ajudam/src/views/cadastro_voluntario.php" class="btn btn-primary">Faça Parte</a>
-</section>
 
-<!-- SEÇÃO DE CARDS / INFORMAÇÕES -->
-<section style="padding:60px 0; background:#f5f5f5;">
-  <div class="container" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
-    <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-      <a class="" href="/Maos_Que_Ajudam/index.php">
-        <h3 style="font-weight:600; margin-bottom:15px;">Quem Somos</h3>
-      </a>
-      <p>Organização sem fins lucrativos dedicada a criar impacto social positivo e transformação na vida das pessoas.</p>
-    </div>
-    <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-      <a href="/Maos_Que_Ajudam/src/views/projetos.php">
-        <h3 style="font-weight:600; margin-bottom:15px;">Projetos</h3>
-      </a>
-      <p>Desenvolvemos iniciativas sociais focadas em educação, saúde e apoio à comunidade carente.</p>
-    </div>
-    <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-      <a href="/Maos_Que_Ajudam/src/views/doacoes.php">
-        <h3 style="font-weight:600; margin-bottom:15px;">Como Ajudar</h3>
-      </a>
-      <p>Saiba como contribuir e participar das nossas ações, seja como voluntário ou doador.</p>
-    </div>
-  </div>
-</section>
+  <!-- HERO SECTION -->
+  <style>
+    /* Forçar links do footer em preto */
+    footer a {
+      color: #ffffffff !important;
+      opacity: 1 !important;
+      text-decoration: none;
+    }
 
-<!-- FOOTER MODERNO TECH -->
-<footer style="background: linear-gradient(135deg,#3b82f6,#1e40af); color:white; padding:60px 0;">
-  <div class="container">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
-      <!-- Sobre -->
-      <div>
-        <h5 style="font-weight:700; margin-bottom:20px;"> Mãos que Ajudam 👐</h5>
-        <p style="opacity:0.85;">Somos uma ONG comprometida em promover 
-          <p>solidariedade e impactar vidas positivamente.</p> 
+    footer a:hover {
+      color: #ffffffff !important;
+      opacity: 0.85 !important;
+      text-decoration: none;
+    }
+
+    .links_titulos {
+      color: #000000ff !important;
+      opacity: 1 !important;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .links_titulos:hover {
+      color: #000000ff !important;
+      opacity: 0.85 !important;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+
+  <section style="background: linear-gradient(135deg,#3b82f6,#1e40af); color:white; padding:80px 0; text-align:center;">
+    <h2 style="font-size:2.8em; font-weight:700; margin-bottom:20px;">Transformando Vidas com Solidariedade</h2>
+    <p style="font-size:1.2em; opacity:0.9; max-width:700px; margin:0 auto 30px;">Cada gesto de amor faz diferença. Junte-se à nossa corrente do bem e ajude a transformar vidas hoje mesmo.</p>
+    <a href="/Maos_Que_Ajudam/src/views/cadastro_voluntario.php" class="btn btn-primary btn-lg bg-light text-black rounded-pill mt-3 d-inline-block">Faça Parte</a>
+  </section>
+
+  <!-- SEÇÃO DE CARDS / INFORMAÇÕES -->
+  <section style="padding:60px 0; background:#f5f5f5;">
+    <div class="container" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
+      <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+        <a class="links_titulos" href="/Maos_Que_Ajudam/index.php">
+          <h3 style="font-weight:600; margin-bottom:15px;">Quem Somos</h3>
+        </a>
+        <p>Organização sem fins lucrativos dedicada a criar impacto social positivo e transformação na vida das pessoas.</p>
+      </div>
+      <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+        <a class="links_titulos" href="/Maos_Que_Ajudam/src/views/projetos.php">
+          <h3 style="font-weight:600; margin-bottom:15px;">Projetos</h3>
+        </a>
+        <p>Desenvolvemos iniciativas sociais focadas em educação, saúde e apoio à comunidade carente.</p>
+      </div>
+      <div style="background:white; padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+        <a class="links_titulos"
+          href="/Maos_Que_Ajudam/src/views/doacoes.php">
+          <h3 style="font-weight:600; margin-bottom:15px;">Como Ajudar</h3>
+        </a>
+        <p>Saiba como contribuir e participar das nossas ações, seja como voluntário ou doador.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER MODERNO TECH -->
+  <footer style="background: linear-gradient(135deg,#3b82f6,#1e40af); color:white; padding:60px 0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;">
+        <!-- Sobre -->
+        <div>
+          <h5 style="font-weight:700; margin-bottom:20px;"> Mãos que Ajudam 👐</h5>
+          <p style="opacity:0.85;">Somos uma ONG comprometida em promover
+          <p>solidariedade e impactar vidas positivamente.</p>
           Cada gesto faz diferença.</p>
+        </div>
+        <!-- Contato -->
+        <div>
+          <h6 style="font-weight:600; margin-bottom:15px;">Contato</h6>
+          <p style="opacity:0.85;">📍 São Paulo, SP – Brasil</p>
+          <p style="opacity:0.85;">✉️ contato@maosqueajudam.org</p>
+          <p style="opacity:0.85;">📞 +55 (11) 49028922</p>
+          <p style="opacity:0.85;">🕒 Seg–Sex, 9h às 17h</p>
+        </div>
       </div>
-      <!-- Contato -->
-      <div>
-        <h6 style="font-weight:600; margin-bottom:15px;">Contato</h6>
-        <p style="opacity:0.85;">📍 São Paulo, SP – Brasil</p>
-        <p style="opacity:0.85;">✉️ contato@maosqueajudam.org</p>
-        <p style="opacity:0.85;">📞 +55 (11) 49028922</p>
-        <p style="opacity:0.85;">🕒 Seg–Sex, 9h às 17h</p>
+
+      <hr style="margin:40px 0; border-color: rgba(255,255,255,0.2);">
+
+      <div style="display:flex; flex-direction:column-reverse flex-md-row; justify-content:space-between; align-items:center; gap:20px;">
+        <p style="opacity:0.75; font-size:14px;">© 2025 <strong>Mãos Que Ajudam</strong>. Todos os direitos reservados.</p>
+        <div style="display:flex; gap:15px;">
+          <a href="#" aria-label="Facebook" style="color:inherit; opacity:0.85; font-size:24px;"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter" style="color:inherit; opacity:0.85; font-size:24px;"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram" style="color:inherit; opacity:0.85; font-size:24px;"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
     </div>
+  </footer>
 
-    <hr style="margin:40px 0; border-color: rgba(255,255,255,0.2);">
-
-    <div style="display:flex; flex-direction:column-reverse flex-md-row; justify-content:space-between; align-items:center; gap:20px;">
-      <p style="opacity:0.75; font-size:14px;">© 2025 <strong>Mãos Que Ajudam</strong>. Todos os direitos reservados.</p>
-      <div style="display:flex; gap:15px;">
-        <a href="#" aria-label="Facebook" style="color:inherit; opacity:0.85; font-size:24px;"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Twitter" style="color:inherit; opacity:0.85; font-size:24px;"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Instagram" style="color:inherit; opacity:0.85; font-size:24px;"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
-
- <!-- Botão WhatsApp Fixo -->
+  <!-- Botão WhatsApp Fixo -->
   <button class="Btn" onclick="window.open('https://wa.me/5511999999999', '_blank')">
     <span class="svgContainer">
       <svg viewBox="0 0 16 16" height="2.5em" class="svgIcon" fill="white">
@@ -97,10 +114,11 @@
       </svg>
     </span>
     <span class="BG"></span>
-</button>
- 
-<!-- Scripts: carregar Bootstrap JS uma vez -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </button>
+
+  <!-- Scripts: carregar Bootstrap JS uma vez -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

@@ -43,12 +43,12 @@
         <div class="carousel-overlay"></div>
         <img src="public/imagens/logo/doacoes/doacoes_carrossel.png" class="d-block w-100" alt="Imagem 2">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="/Maos_Que_Ajudam/src/views/doacoes.php" class="text-white text-decoration-none">
+          <a href="/Maos_Que_Ajudam/src/views/doacoes.php" class="text-white text-decoration-none color-white">
             <h2 class="fw-bold">Doações</h2>
           </a>
           <h3>Sua contribuição transforma o futuro.</h3>
-          <p>Doe amor, doe esperança,<p> doe o que puder. <p>
-<p>A sua contribuição faz a diferença! Na Mãos que Ajudam, você pode doar qualquer valor de forma única ou
+          <p>Doe amor, doe esperança, doe o que puder.
+A sua contribuição faz a diferença! Na Mãos que Ajudam, você pode doar qualquer valor de forma única ou
 aderir a um plano mensal de contribuição, garantindo que nossos projetos continuem mudando vidas todos os
 dias. Cada real doado é convertido em oportunidades, alimentos, cursos e sorrisos. Participe, sua
 generosidade é o primeiro passo para um futuro melhor.</p>
