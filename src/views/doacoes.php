@@ -26,7 +26,9 @@
             <div class="card__glow"></div>
             <div class="card__content">
                 <div class="card__badge">NEW</div>
-                <div style="--bg-color: #a78bfa" class="card__image"></div>
+                <div class="card__image">
+                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card1.jpg" alt="Imagem do card 1" loading="lazy">
+                </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
                     <p class="card__description">Hover to reveal stunning effects</p>
@@ -49,7 +51,9 @@
             <div class="card__glow"></div>
             <div class="card__content">
                 <div class="card__badge">NEW</div>
-                <div style="--bg-color: #a78bfa" class="card__image"></div>
+                <div class="card__image">
+                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card2.jpg" alt="Imagem do card 2" loading="lazy">
+                </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
                     <p class="card__description">Hover to reveal stunning effects</p>
@@ -72,7 +76,9 @@
             <div class="card__glow"></div>
             <div class="card__content">
                 <div class="card__badge">NEW</div>
-                <div style="--bg-color: #a78bfa" class="card__image"></div>
+                <div class="card__image">
+                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card3.jpg" alt="Imagem do card 3" loading="lazy">
+                </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
                     <p class="card__description">Hover to reveal stunning effects</p>
@@ -95,7 +101,9 @@
             <div class="card__glow"></div>
             <div class="card__content">
                 <div class="card__badge">NEW</div>
-                <div style="--bg-color: #a78bfa" class="card__image"></div>
+                <div class="card__image">
+                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card4.jpg" alt="Imagem do card 4" loading="lazy">
+                </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
                     <p class="card__description">Hover to reveal stunning effects</p>
@@ -118,7 +126,9 @@
             <div class="card__glow"></div>
             <div class="card__content">
                 <div class="card__badge">NEW</div>
-                <div style="--bg-color: #a78bfa" class="card__image"></div>
+                <div class="card__image">
+                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card5.jpg" alt="Imagem do card 5" loading="lazy">
+                </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
                     <p class="card__description">Hover to reveal stunning effects</p>
@@ -141,7 +151,9 @@
             <div class="card__glow"></div>
             <div class="card__content">
                 <div class="card__badge">NEW</div>
-                <div style="--bg-color: #a78bfa" class="card__image"></div>
+                <div class="card__image">
+                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card6.jpg" alt="Imagem do card 6" loading="lazy">
+                </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
                     <p class="card__description">Hover to reveal stunning effects</p>

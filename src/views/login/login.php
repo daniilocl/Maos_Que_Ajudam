@@ -14,6 +14,7 @@
 <?php
   require_once __DIR__ . '/../../utils/session_helper.php';
   require_once __DIR__ . '/../../utils/notification_helper.php';
+
   // Usa a função segura para iniciar sessão
   secure_session_start();
   exibirNotificationSessao();
@@ -21,16 +22,19 @@
   <div class="desktop-layout">
     <div class="container" id="container">
       <div class="desktop-layout">
+=======
+>>>>>>> d12428838783fcad03a2fe7d1b1185f748b522a6
         <div class="form-container register-container">
           <form action="../../controllers/cadastro.php" method="POST">
             <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(get_csrf_token()); ?>">
             <h1>Crie sua conta</h1>
-            <input type="text" placeholder="Nome" name="nome" required />
+            <input type="text" placeholder="Nome completo" name="nome" required />
             <input type="text" placeholder="CPF" name="cpf" required />
             <input type="email" placeholder="Email" name="email" required />
             <input type="password" placeholder="Senha" name="senha" required />
             <input type="password" placeholder="Confirme a Senha" name="confirma_senha" required />
             <button type="submit">Cadastrar</button>
+            <a class="button_voltar btn btn-secondary mt-3 d-inline-block rounded-pill" href="/Maos_Que_Ajudam/index.php">Voltar</a>
           </form>
         </div>
 
@@ -49,13 +53,15 @@
                 <a href="#">Esqueceu sua senha?</a>
               </div>
             </div>
+
             <button type="submit">Login</button>
+>>>>>>> d12428838783fcad03a2fe7d1b1185f748b522a6
             <span>ou use sua conta</span>
             <div class="social-container">
               <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
               <a href="#" class="social"><i class="lni lni-google"></i></a>
             </div>
-            <button class="button_voltar"><a href="/Maos_Que_Ajudam/index.php">Voltar</a></button>
+            <a class="button_voltar btn btn-secondary mt-3 d-inline-block rounded-pill" href="/Maos_Que_Ajudam/index.php">Voltar</a>
           </form>
         </div>
 
