@@ -1,7 +1,23 @@
 <?php
 // src/controllers/logout.php
+require_once __DIR__ . '/../utils/session_helper.php';
+secure_session_start();
 
-session_start();
+require_once __DIR__ . '/../utils/notification_helper.php';
+
+// Exigir POST com token CSRF válido para efetuar logout
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    setNotification('erro', 'Logout bloqueado', 'Logout só pode ser feito via formulário.');
+    header('Location: /Maos_Que_Ajudam/index.php');
+    exit;
+}
+
+$token = $_POST['csrf_token'] ?? '';
+if (!validate_csrf_token($token)) {
+    setNotification('erro', 'Token inválido', 'Não foi possível validar o pedido de logout.');
+    header('Location: /Maos_Que_Ajudam/index.php');
+    exit;
+}
 
 // Destrói todas as variáveis de sessão
 $_SESSION = array();
