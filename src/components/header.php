@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-<body>
-=======
-<?php
-require_once __DIR__ . '/../utils/session_helper.php';
-// Inicia sessão de forma segura antes de qualquer saída
-secure_session_start();
-?>
->>>>>>> d12428838783fcad03a2fe7d1b1185f748b522a6
-
 <style>
   /* Forçar texto do header em branco */
   .navbar { color: #ffffff; }
@@ -61,9 +43,6 @@ secure_session_start();
       </ul>
     </div>
 
-<<<<<<< HEAD
-    <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn bg-white text-black ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
-=======
     <?php if (isset($_SESSION['user_id'])): ?>
       <div class="dropdown ms-lg-3 mt-2 mt-lg-0">
         <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,9 +58,8 @@ secure_session_start();
         </ul>
       </div>
     <?php else: ?>
-      <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
+      <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn text-black bg-white ms-lg-3 mt-2 mt-lg-0">Login</a>
     <?php endif; ?>
->>>>>>> d12428838783fcad03a2fe7d1b1185f748b522a6
   </div>
 </nav>
 

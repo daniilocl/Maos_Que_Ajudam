@@ -22,8 +22,6 @@
   <div class="desktop-layout">
     <div class="container" id="container">
       <div class="desktop-layout">
-=======
->>>>>>> d12428838783fcad03a2fe7d1b1185f748b522a6
         <div class="form-container register-container">
           <form action="../../controllers/cadastro.php" method="POST">
             <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(get_csrf_token()); ?>">
@@ -55,7 +53,6 @@
             </div>
 
             <button type="submit">Login</button>
->>>>>>> d12428838783fcad03a2fe7d1b1185f748b522a6
             <span>ou use sua conta</span>
             <div class="social-container">
               <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
