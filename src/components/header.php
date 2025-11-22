@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-<body>
-
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
+require_once __DIR__ . '/../utils/session_helper.php';
+// Inicia sessão de forma segura antes de qualquer saída
+secure_session_start();
 ?>
 
-<style>
-</style>
 <style>
   /* Forçar texto do header em branco */
   .navbar { color: #ffffff; }
@@ -27,7 +15,6 @@ if (session_status() === PHP_SESSION_NONE) {
   .navbar .dropdown-item { color: inherit; }
   /* Ajusta botão de login para texto branco */
   .navbar .btn-login { color: #ffffff !important; }
-</style>
 </style>
 
 <!-- Navbar -->
@@ -64,11 +51,16 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <?php if (isset($_SESSION['user_id'])): ?>
       <div class="dropdown ms-lg-3 mt-2 mt-lg-0">
-        <a class="btn btn-light text-primary dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <?php echo htmlspecialchars($_SESSION['user_nome'] ?? 'Usuário'); ?>
         </a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-          <li><a class="dropdown-item" href="/Maos_Que_Ajudam/src/controllers/logout.php">Sair</a></li>
+          <li>
+            <form id="logout-form" method="POST" action="/Maos_Que_Ajudam/src/controllers/logout.php" style="display:inline;">
+              <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(get_csrf_token()); ?>">
+              <button type="button" class="dropdown-item" onclick="confirmarLogout('logout-form')">Sair</button>
+            </form>
+          </li>
         </ul>
       </div>
     <?php else: ?>
@@ -77,5 +69,24 @@ if (session_status() === PHP_SESSION_NONE) {
   </div>
 </nav>
 
-</body>
-</html>
+<!-- SweetAlert2 + logout confirmation -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function confirmarLogout(formId) {
+    Swal.fire({
+      title: 'Deseja fazer logout?',
+      text: 'Você será desconectado da sua conta.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sim, sair',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const form = document.getElementById(formId);
+        if (form) form.submit();
+      }
+    });
+  }
+</script>
