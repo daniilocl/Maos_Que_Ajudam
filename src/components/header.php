@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,13 @@
   <title>Document</title>
 </head>
 <body>
+=======
+<?php
+require_once __DIR__ . '/../utils/session_helper.php';
+// Inicia sessão de forma segura antes de qualquer saída
+secure_session_start();
+?>
+>>>>>>> d12428838783fcad03a2fe7d1b1185f748b522a6
 
 <style>
   /* Forçar texto do header em branco */
@@ -19,7 +27,6 @@
   .navbar .dropdown-item { color: inherit; }
   /* Ajusta botão de login para texto branco */
   .navbar .btn-login { color: #ffffff !important; }
-</style>
 </style>
 
 <!-- Navbar -->
@@ -54,9 +61,48 @@
       </ul>
     </div>
 
+<<<<<<< HEAD
     <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn bg-white text-black ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
+=======
+    <?php if (isset($_SESSION['user_id'])): ?>
+      <div class="dropdown ms-lg-3 mt-2 mt-lg-0">
+        <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <?php echo htmlspecialchars($_SESSION['user_nome'] ?? 'Usuário'); ?>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+          <li>
+            <form id="logout-form" method="POST" action="/Maos_Que_Ajudam/src/controllers/logout.php" style="display:inline;">
+              <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(get_csrf_token()); ?>">
+              <button type="button" class="dropdown-item" onclick="confirmarLogout('logout-form')">Sair</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    <?php else: ?>
+      <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
+    <?php endif; ?>
+>>>>>>> d12428838783fcad03a2fe7d1b1185f748b522a6
   </div>
 </nav>
 
-</body>
-</html>
+<!-- SweetAlert2 + logout confirmation -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function confirmarLogout(formId) {
+    Swal.fire({
+      title: 'Deseja fazer logout?',
+      text: 'Você será desconectado da sua conta.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sim, sair',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const form = document.getElementById(formId);
+        if (form) form.submit();
+      }
+    });
+  }
+</script>
