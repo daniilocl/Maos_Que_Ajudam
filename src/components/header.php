@@ -58,7 +58,7 @@
         </ul>
       </div>
     <?php else: ?>
-      <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
+      <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn text-black bg-white ms-lg-3 mt-2 mt-lg-0">Login</a>
     <?php endif; ?>
   </div>
 </nav>
