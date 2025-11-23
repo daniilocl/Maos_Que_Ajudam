@@ -169,3 +169,18 @@
 .socialContainer:hover .socialSvg {
   animation: slide-in-top 0.3s both;
 }
+
+/* Exception: allow white button with black text in navbar (restore original login button appearance) */
+nav.navbar a.btn.bg-white.text-black,
+nav.navbar a.btn.text-black.bg-white,
+nav.navbar .btn.bg-white.text-black {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  border-color: rgba(0,0,0,0.12) !important;
+}
+
+nav.navbar a.btn.bg-white.text-black:hover,
+nav.navbar .btn.bg-white.text-black:hover {
+  color: #000000 !important;
+  background-color: #f8f9fa !important;
+}

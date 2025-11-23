@@ -1,15 +1,9 @@
-<style>
-  /* Forçar texto do header em branco */
-  .navbar { color: #ffffff; }
-  .navbar .navbar-brand,
-  .navbar .navbar-brand span { color: #ffffff !important; }
-  .navbar .nav-link { color: #ffffff !important; }
-  .navbar .nav-link.active { color: #ffffff !important; font-weight:600; }
-  /* Mantém itens do dropdown com cor padrão (escura) para legibilidade sobre fundo branco */
-  .navbar .dropdown-item { color: inherit; }
-  /* Ajusta botão de login para texto branco */
-  .navbar .btn-login { color: #ffffff !important; }
-</style>
+<?php
+require_once __DIR__ . '/../utils/session_helper.php';
+require_once __DIR__ . '/../utils/notification_helper.php';
+// Inicia sessão de forma segura antes de qualquer saída
+secure_session_start();
+?>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -44,7 +38,7 @@
 
     <?php if (isset($_SESSION['user_id'])): ?>
       <div class="dropdown ms-lg-3 mt-2 mt-lg-0">
-        <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="btn bg-white text-black dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <?php echo htmlspecialchars($_SESSION['user_nome'] ?? 'Usuário'); ?>
         </a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
@@ -57,7 +51,7 @@
         </ul>
       </div>
     <?php else: ?>
-      <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn text-black bg-white ms-lg-3 mt-2 mt-lg-0">Login</a>
+      <a href="/Maos_Que_Ajudam/src/views/login/login.php" class="btn bg-white text-black ms-lg-3 mt-2 mt-lg-0 btn-login">Login</a>
     <?php endif; ?>
   </div>
 </nav>
@@ -83,3 +77,7 @@
     });
   }
 </script>
+<?php
+// Exibe notificações em toda a aplicação quando definidas
+exibirNotificationSessao();
+?>
