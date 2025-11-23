@@ -389,6 +389,28 @@ input {
   }
 }
 
+/* Espaçamento específico para layout mobile: aumenta espaço entre botões e garante largura adequada */
+@media (max-width: 768px) {
+  /* tornar botões e links de ação em bloco e espaçados */
+  .mobile-layout .container form button,
+  .mobile-layout .container .button_voltar {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0; /* espaçamento vertical entre botões */
+  }
+
+  /* se quiser os botões com borda arredondada menor no mobile */
+  .mobile-layout .container form button,
+  .mobile-layout .container .button_voltar {
+    border-radius: 12px;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 /* Desktop visível por padrão, mobile escondido */
 .desktop-layout {
   display: block;
@@ -402,15 +424,31 @@ input {
   .desktop-layout {
     display: none !important; /* esconde desktop */
   }
+
+  /* Centraliza o conteúdo do layout mobile vertical e horizontalmente */
   .mobile-layout {
-    display: block !important; /* mostra mobile */
+    display: flex !important; /* mostra e usa flex para centrar */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px 0;
+    box-sizing: border-box;
+    position: fixed; /* garantir que ocupa toda a viewport */
+    inset: 0;
+    z-index: 9999;
   }
 
-  /* Ajustes mobile para os formulários */
+  /* Ajustes mobile para os formulários dentro do container */
   .mobile-layout .container {
-    width: 90%;
+    width: 95%;
+    max-width: 480px; /* limita a largura para melhor leitura */
     min-height: auto;
     padding: 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: #ffffff; /* garantir fundo branco */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   }
 }
 

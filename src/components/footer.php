@@ -57,8 +57,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      height: 100%;
+      width: 80%;
+      height: 80%;
     }
 
     button.Btn .svgContainer svg {
@@ -156,3 +156,37 @@
 
   <!-- Scripts: carregar Bootstrap JS uma vez -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      // Inicializa apenas se estivermos na página de doações (modal existe)
+      if (!document.getElementById('cardModal')) return;
+
+      document.addEventListener('click', function (e) {
+        var card = e.target.closest('.card');
+        if (!card) return;
+        // Ignorar cliques nos botões internos do card
+        if (e.target.closest('.card__button')) return;
+
+        var title = card.querySelector('.card__title')?.textContent?.trim() || '';
+        var desc = card.querySelector('.card__description')?.textContent?.trim() || '';
+        var price = card.querySelector('.card__price')?.textContent?.trim() || '';
+        var img = card.querySelector('.card__image img')?.getAttribute('src') || '';
+
+        var modalEl = document.getElementById('cardModal');
+        if (!modalEl) return;
+        modalEl.querySelector('#cardModalLabel').textContent = title;
+        modalEl.querySelector('#cardModalDescription').textContent = desc;
+        modalEl.querySelector('#cardModalPrice').textContent = price;
+        var modalImg = modalEl.querySelector('#cardModalImage');
+        modalImg.setAttribute('src', img);
+        modalImg.setAttribute('alt', title);
+
+        var action = modalEl.querySelector('#cardModalAction');
+        var actionHref = card.getAttribute('data-action') || '#';
+        action.setAttribute('href', actionHref);
+
+        var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+        bsModal.show();
+      }, false);
+    })();
+  </script>

@@ -103,7 +103,8 @@
         <h1>Login</h1>
         <input type="email" placeholder="Email" required />
         <input type="password" placeholder="Senha" required />
-        <button type="submit">Entrar</button>
+        <button href="/Maos_Que_Ajudam/index.php" type="submit">Entrar</button>
+        <a class="button_voltar btn btn-secondary mt-3 d-inline-block rounded-pill" href="/Maos_Que_Ajudam/index.php">Voltar</a>
         <p>Não tem conta? <a href="#" id="show-register">Cadastre-se</a></p>
       </form>
 
@@ -114,6 +115,7 @@
         <input type="email" placeholder="Email" required />
         <input type="password" placeholder="Senha" required />
         <button type="submit">Cadastrar</button>
+        <a class="button_voltar btn btn-secondary mt-3 d-inline-block rounded-pill" href="/Maos_Que_Ajudam/index.php">Voltar</a>
         <p>Já tem conta? <a href="#" id="show-login">Entrar</a></p>
       </form>
     </div>
