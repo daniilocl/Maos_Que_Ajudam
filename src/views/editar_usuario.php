@@ -27,7 +27,7 @@
             <label>Nível de Acesso</label>
             <select name="tipo_usuario" class="form-select">
                 <option value="admin" <?= $usuario['tipo_usuario'] === 'admin' ? 'selected' : '' ?>>Administrador</option>
-                <option value="padrao" <?= $usuario['tipo_usuario'] === 'padrao' ? 'selected' : '' ?>>Padrão</option>
+                <option value="cliente" <?= $usuario['tipo_usuario'] === 'cliente' ? 'selected' : '' ?>>Padrão</option>
                 <option value="voluntario" <?= $usuario['tipo_usuario'] === 'voluntario' ? 'selected' : '' ?>>Voluntário</option>
             </select>
         </div>

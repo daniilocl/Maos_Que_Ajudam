@@ -84,7 +84,8 @@ if (isset($_GET['busca']) && $_GET['busca'] !== '') {
                                     class="fas fa-users"></i> Gerenciar Usuários </a> </li>
                         <li class="nav-item"> <a class="nav-link" href="/Maos_Que_Ajudam/src/controllers/logout.php">
                                 <i class="fas fa-sign-out-alt"></i> Sair
-                            </a </li>
+                            </a></li>
+
                     </ul>
                 </div>
             </nav>
@@ -179,7 +180,7 @@ if (isset($_GET['busca']) && $_GET['busca'] !== '') {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="/Maos_Que_Ajudam/src/controllers/adicionar_usuario.php">
+                    <form method="POST" action="../controllers/adicionar_usuario.php">
                         <div class="mb-3">
                             <label for="nomeUsuario" class="form-label">Nome Completo</label>
                             <input type="text" name="nome" class="form-control" id="nomeUsuario" required>
@@ -214,6 +215,7 @@ if (isset($_GET['busca']) && $_GET['busca'] !== '') {
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
