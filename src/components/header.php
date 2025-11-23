@@ -35,7 +35,6 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Mais</a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="/Maos_Que_Ajudam/src/views/projetos.php">Projetos</a></li>
-            <li><a class="dropdown-item" href="/Maos_Que_Ajudam/src/views/contribuicoes.php">Contribuições e Parcerias</a></li>
             <li><a class="dropdown-item" href="/Maos_Que_Ajudam/src/views/cadastro_voluntario.php">Cadastro de Voluntário</a></li>
             <li><a class="dropdown-item" href="/Maos_Que_Ajudam/src/views/administracao.php">Administração</a></li>
           </ul>

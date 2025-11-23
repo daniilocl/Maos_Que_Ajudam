@@ -27,7 +27,7 @@
             <div class="card__content">
                 <div class="card__badge">NEW</div>
                 <div class="card__image">
-                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card1.jpg" alt="Imagem do card 1" loading="lazy">
+                    <img src="/Maos_Que_Ajudam/public/imagens/logo/doacoes/arvore_maos_que_ajudam.png" alt="Imagem do card 1" loading="lazy">
                 </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
@@ -52,7 +52,7 @@
             <div class="card__content">
                 <div class="card__badge">NEW</div>
                 <div class="card__image">
-                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card2.jpg" alt="Imagem do card 2" loading="lazy">
+                    <img src="/Maos_Que_Ajudam/public/imagens/logo/doacoes/celular_maos_que_ajudam.png" alt="Imagem do card 2" loading="lazy">
                 </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
@@ -77,7 +77,7 @@
             <div class="card__content">
                 <div class="card__badge">NEW</div>
                 <div class="card__image">
-                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card3.jpg" alt="Imagem do card 3" loading="lazy">
+                    <img src="/Maos_Que_Ajudam/public/imagens/logo/doacoes/caixas_maos_que_ajudam.png" alt="Imagem do card 3" loading="lazy">
                 </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
@@ -102,7 +102,7 @@
             <div class="card__content">
                 <div class="card__badge">NEW</div>
                 <div class="card__image">
-                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card4.jpg" alt="Imagem do card 4" loading="lazy">
+                    <img src="/Maos_Que_Ajudam/public/imagens/logo/doacoes/impacto_maos_que_ajudam.png" alt="Imagem do card 4" loading="lazy">
                 </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
@@ -127,7 +127,7 @@
             <div class="card__content">
                 <div class="card__badge">NEW</div>
                 <div class="card__image">
-                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card5.jpg" alt="Imagem do card 5" loading="lazy">
+                    <img src="/Maos_Que_Ajudam/public/imagens/logo/doacoes/menino_maos_que_ajudam.png" alt="Imagem do card 5" loading="lazy">
                 </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
@@ -152,7 +152,7 @@
             <div class="card__content">
                 <div class="card__badge">NEW</div>
                 <div class="card__image">
-                    <img src="/Maos_Que_Ajudam/public/imagens/doacoes/card6.jpg" alt="Imagem do card 6" loading="lazy">
+                    <img src="/Maos_Que_Ajudam/public/imagens/logo/doacoes/menina_maos_que_ajudam.png" alt="Imagem do card 6" loading="lazy">
                 </div>
                 <div class="card__text">
                     <p class="card__title">Premium Design</p>
