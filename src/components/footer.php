@@ -1,7 +1,7 @@
 
   <!-- HERO SECTION -->
   <style>
-    /* Forçar links do footer em preto */
+    /* Footer link colors */
     footer a {
       color: #ffffffff !important;
       opacity: 1 !important;
@@ -26,6 +26,54 @@
       opacity: 0.85 !important;
       text-decoration: none;
       cursor: pointer;
+    }
+
+    /* WhatsApp floating button styling */
+    button.Btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 64px;
+      height: 64px;
+      padding: 0;
+      border: none;
+      border-radius: 50% !important;
+      background: #25D366; /* WhatsApp green */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+      cursor: pointer;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    button.Btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(37,211,102,0.18);
+    }
+
+    button.Btn .svgContainer {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    button.Btn .svgContainer svg {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
+
+    /* Optional background span (if used for effects) */
+    button.Btn .BG {
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      border-radius: inherit;
+      pointer-events: none;
     }
   </style>
 
