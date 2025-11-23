@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../db/connection.php';
 require_once __DIR__ . '/../models/Usuario.php';
+require_once __DIR__ . '/../utils/notification_helper.php';
 
 session_start();
 
@@ -19,9 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usuarioModel = new Usuario($conn);
 
     if ($usuarioModel->atualizar($id, $nome, $email, $tipo_usuario)) {
+        setNotification('sucesso', 'Editado', 'Usuário atualizado com sucesso.');
         header("Location: /Maos_Que_Ajudam/src/views/administracao.php?msg=editado");
         exit;
     } else {
-        echo "Erro ao atualizar usuário!";
+        setNotification('erro', 'Erro', 'Erro ao atualizar usuário. Verifique o log.');
+        header("Location: /Maos_Que_Ajudam/src/views/editar_usuario.php?id={$id}");
+        exit;
     }
 }

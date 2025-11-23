@@ -133,10 +133,23 @@ class Usuario
             VALUES (?, ?, ?, ?, ?, NOW())";
 
         $stmt = $this->conn->prepare($sql);
-        var_dump($tipo_usuario);
-        $stmt->bind_param("sssss", $nome, $cpf, $email, $senha, $tipo_usuario);
-        var_dump($nome, $cpf, $email, $senha, $tipo_usuario);
-        return $stmt->execute();
+        if (!$stmt) {
+            error_log("Usuario::criar - prepare failed: " . $this->conn->error);
+            return false;
+        }
+
+        if (!$stmt->bind_param("sssss", $nome, $cpf, $email, $senha, $tipo_usuario)) {
+            error_log("Usuario::criar - bind_param failed: " . $stmt->error);
+            $stmt->close();
+            return false;
+        }
+
+        $res = $stmt->execute();
+        if (!$res) {
+            error_log("Usuario::criar - execute failed: " . $stmt->error);
+        }
+        $stmt->close();
+        return $res;
     }
 
     public function buscarPorId($id)
@@ -155,9 +168,23 @@ class Usuario
             WHERE idUsuario = ?";
 
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("sssi", $nome, $email, $tipo_usuario, $id);
+        if (!$stmt) {
+            error_log("Usuario::atualizar - prepare failed: " . $this->conn->error);
+            return false;
+        }
 
-        return $stmt->execute();
+        if (!$stmt->bind_param("sssi", $nome, $email, $tipo_usuario, $id)) {
+            error_log("Usuario::atualizar - bind_param failed: " . $stmt->error);
+            $stmt->close();
+            return false;
+        }
+
+        $res = $stmt->execute();
+        if (!$res) {
+            error_log("Usuario::atualizar - execute failed: " . $stmt->error);
+        }
+        $stmt->close();
+        return $res;
     }
 
     public function buscar($termo)
