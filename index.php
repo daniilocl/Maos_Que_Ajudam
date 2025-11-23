@@ -92,7 +92,7 @@ experiência que muda você e o mundo ao seu redor. </p>
         <div class="carousel-overlay"></div>
         <img src="public/imagens/logo/parcerias/parcerias.azul.png" class="d-block w-100" alt="Imagem 4">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-          <a href="/Maos_Que_Ajudam/src/views/contribuicoes.php" class="text-white text-decoration-none">
+          <a href="" class="text-white text-decoration-none">
             <h2 class="fw-bold"> Contribuições e Parcerias – Juntos somos mais fortes</h2>
           </a>
           <h3>Parcerias que inspiram transformação.</h3>

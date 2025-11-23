@@ -1,232 +1,261 @@
+/* Modern Projeto styles - Cores Aprimoradas */
+:root{
+    --bg: #f7f9fc; /* Fundo mais claro */
+    --card: #ffffff;
+    --text-primary: #1e293b; /* Texto principal mais escuro */
+    --text-muted: #64748b; /* Texto secundário mais suave */
+    --accent: #5c5ff6;
+    --accent-dark: #4f53da;
+    --accent-2: #7c3aed;
+    --shadow: 0 10px 25px rgba(16, 24, 40, 0.08); /* Sombra mais sutil */
+    --shadow-hover: 0 18px 40px rgba(16, 24, 40, 0.12);
+}
+
 /* --- Estilos Gerais --- */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Fundo muito claro */
-    color: #343a40;
+    background-color: var(--bg);
+    color: var(--text-primary);
 }
 
 .container {
-    width: 90%;
+    width: 92%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 32px 0;
 }
+
+/* Hero Section */
+.projetos-hero {
+    /* Novo background: sutil e com gradiente diagonal */
+    background: linear-gradient(135deg, rgba(92, 95, 246, 0.08), rgba(124, 58, 237, 0.06), var(--card));
+    border-radius: 12px;
+    padding: 50px 20px; /* Mais padding para destaque */
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+.projetos-hero h1 { 
+    margin:0 0 10px 0; 
+    font-size: 2.5rem; /* Maior destaque */
+    font-weight: 700; 
+    color: var(--text-primary); 
+}
+.projetos-hero p { 
+    margin:0 auto 24px auto; /* Centralizado com margem */
+    color: var(--text-muted); 
+    font-size: 1.15rem; 
+    max-width: 600px;
+}
+.btn-hero { 
+    padding: 12px 24px; 
+    border-radius: 10px; 
+    font-weight: 600; 
+    /* Estilo do botão principal */
+    background-color: var(--accent);
+    border-color: var(--accent);
+    transition: background-color 0.2s, transform 0.2s;
+}
+.btn-hero:hover { background-color: var(--accent-dark); transform: translateY(-1px); }
+.btn-ghost { 
+    margin-left: 15px; 
+    color: var(--accent); 
+    border-color: var(--accent);
+    transition: background-color 0.2s;
+}
+.btn-ghost:hover { background-color: rgba(92, 95, 246, 0.08); color: var(--accent-dark); }
 
 
 /* --- Filtros (Botões de Categoria) --- */
 .filtro-acoes {
     margin-bottom: 30px;
-    padding: 15px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    background: var(--card); /* Fundo branco simples */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(16, 24, 40, 0.06); /* Sombra mais leve */
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    border: 1px solid #e2e8f0; /* Borda sutil */
 }
 
-.filtro-acoes p {
-    margin: 0 15px 0 0;
-    font-size: 1.1em;
+.filtro-acoes p { 
+    margin: 0 18px 0 0; 
+    font-size: 1em; 
+    font-weight: 600; 
+    color: var(--text-primary);
 }
 
-.botoes-filtro {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.botoes-filtro { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
 }
 
 .btn-filtro {
-    background-color: #e9ecef;
-    color: #495867;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 20px;
+    background: #f1f5f9; /* Fundo cinza claro */
+    color: var(--text-muted);
+    border: 1px solid #cbd5e1; /* Borda mais definida */
+    padding: 8px 14px;
+    border-radius: 999px;
     cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+    transition: all .2s ease;
+    display:inline-flex; 
+    align-items:center; 
+    gap: 6px;
+    font-size: 0.95rem;
 }
-
-.btn-filtro:hover {
-    background-color: #adb5bd;
+.btn-filtro i { opacity: 0.9; }
+.btn-filtro:hover { 
+    background: #e2e8f0; 
+    transform: translateY(-1px); 
+    color: var(--text-primary);
 }
-
 .btn-filtro.active {
-    background-color: #495867;
-    color: white;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #fff;
+    box-shadow: 0 5px 20px rgba(92, 95, 246, 0.25);
+    border-color: var(--accent);
+    transform: translateY(-2px);
 }
 
-/* --- Tabela/Lista de Projetos --- */
-.tabela-projetos {
+/* --- Novo estilo: Cards de Projeto --- */
+.projetos-grid { margin-top: 10px; }
+/* Grid em telas menores (colunas) */
+.projetos-grid .grid {
     display: grid;
-    grid-template-columns: 3fr 1.5fr 1.5fr 1.5fr; /* 4 colunas */
-    gap: 1px; /* Espaço entre as linhas */
-    background-color: #e9ecef; /* Cor de fundo para as linhas */
-    border-radius: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Maior espaçamento */
+}
+.project-card {
+    background: var(--card);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(16, 24, 40, 0.05); /* Sombra muito sutil */
+    border: 1px solid #f0f4f8;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+    align-items: stretch;
+}
+.project-card:hover { 
+    transform: translateY(-4px); 
+    box-shadow: var(--shadow-hover); 
+    border-color: rgba(92, 95, 246, 0.2); /* Borda destaca no hover */
 }
 
-.cabecalho-tabela {
-    display: contents; /* Mantém a estrutura de grid */
-    font-weight: bold;
-    background-color: #6c757d;
-    color: black;
-    padding: 15px;
-    font-size: 0.9em;
+/* Área da mídia (Imagem) */
+.project-media { position: relative; flex: 0 0 auto; }
+.project-media img { 
+    width: 100%; 
+    height: 180px; /* Imagens um pouco maiores */
+    object-fit: cover; 
+    display: block; 
+    border-radius: 12px 12px 0 0; 
+    transition: transform .4s ease; 
+}
+.project-card:hover .project-media img { transform: scale(1.03); }
+
+/* Corpo do Card */
+.project-body { 
+    padding: 18px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+    flex: 1; 
+}
+.project-title { 
+    margin:0; 
+    font-size: 1.15rem; 
+    font-weight: 700; 
+    color: var(--text-primary); 
+}
+.project-area { 
+    margin:0; 
+    color: var(--accent); /* Cor da área em destaque */
+    font-weight: 600; 
+    font-size: 0.85rem; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 6px;
     text-transform: uppercase;
 }
-
-.cabecalho-tabela > div {
-    padding: 15px;
+.project-desc { 
+    margin: 6px 0 10px 0; 
+    color: var(--text-muted); 
+    font-size: 0.95rem; 
+    flex: 1; 
 }
 
-/* Linhas de Projeto */
-.linha-projeto {
-    display: contents;
-    background-color: white;
-    transition: background-color 0.2s;
+/* Meta e Ações */
+.project-meta { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 12px; 
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
 }
-
-.linha-projeto:hover > div {
-    background-color: #f0f0f0; /* Suave destaque ao passar o mouse */
+.project-meta .status { 
+    padding: 6px 14px; 
+    border-radius: 999px; 
+    font-weight: 600; 
+    font-size: 0.8rem; 
+    text-transform: uppercase;
 }
-
-.linha-projeto > div {
-    padding: 15px;
-    border-bottom: 1px solid #dee2e6;
-    display: flex;
-    align-items: center;
-    font-size: 0.95em;
-}
-
-.linha-projeto:last-child > div {
-    border-bottom: none;
-}
-
-/* Estilos Específicos das Colunas */
-.titulo-projeto {
+.project-meta a.btn-detalhe { 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    font-size: 0.9rem; 
     font-weight: 600;
-    color: #343a40;
-}
-
-/* Badges de Área */
-.area-projeto {
-    font-weight: 500;
-}
-
-.area-projeto i {
-    margin-right: 5px;
-}
-
-.area-educacao { color: #007bff; } /* Azul */
-.area-saude { color: #dc3545; } /* Vermelho */
-.area-acolhimento { color: #ffc107; } /* Amarelo/Laranja */
-.area-digital { color: #20c997; } /* Ciano/Verde */
-
-/* Status (Tags coloridas) */
-.status-projeto {
-    font-weight: bold;
-}
-
-.status-urgente {
-    color: #dc3545; /* Vermelho */
-    background-color: #f8d7da;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.status-aberto {
-    color: #28a745; /* Verde */
-    background-color: #d4edda;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.status-concluido {
-    color: #6c757d; /* Cinza */
-    background-color: #e2e6ea;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-/* Botões de Ação */
-.btn-detalhe {
-    background-color: #6c757d;
-    color: white;
     text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-    font-size: 0.9em;
+    background-color: #f1f5f9;
+    color: var(--text-primary);
+    transition: background-color 0.2s, transform 0.2s;
+}
+.project-meta a.btn-detalhe:hover { 
+    background-color: #e2e8f0; 
+    transform: translateY(-1px);
+}
+.project-meta a.cta-principal {
+    background-color: var(--accent);
+    color: white;
+}
+.project-meta a.cta-principal:hover {
+    background-color: var(--accent-dark);
 }
 
-.btn-detalhe:hover {
-    background-color: #5a6268;
-}
+/* Cores dos Status (Mantive as cores originais) */
+.status-urgente { color:#b91c1c; background-color:#fee2e2; }
+.status-aberto { color:#065f46; background-color:#dcfce7; }
+.status-concluido { color:#374151; background-color:#eef2ff; }
 
-.cta-principal {
-    background-color: #007bff; /* Azul primário para CTA principal */
-}
-
-.cta-principal:hover {
-    background-color: #0056b3;
-}
-
-/* --- Footer --- */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #343a40;
-    color: #adb5bd;
-    font-size: 0.9em;
-    margin-top: 40px;
-}
-
-/* --- Responsividade --- */
+/* Responsive tweaks */
 @media (max-width: 900px) {
-    .tabela-projetos {
-        grid-template-columns: 1fr; /* Coluna única em mobile */
+    .projetos-hero h1 { font-size: 2rem; }
+    .projetos-hero p { font-size: 1rem; }
+}
+
+/* Tablet: 2 colunas */
+@media (max-width: 768px) {
+    .projetos-grid .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
     }
-    .cabecalho-tabela {
-        display: none; /* Esconde o cabeçalho da tabela */
-    }
-    .linha-projeto {
-        border-bottom: 5px solid #dee2e6; /* Separador maior */
-        margin-bottom: 15px;
-        display: block;
-        padding: 15px;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-    .linha-projeto > div {
-        border-bottom: 1px dashed #eee;
-        padding: 8px 0;
-        display: block;
-    }
-    .linha-projeto > div:before {
-        font-weight: bold;
-        color: #6c757d;
-        display: block;
-        font-size: 0.8em;
-    }
+    .filtro-acoes p { margin: 0 0 10px 0; width: 100%; }
+}
+
+/* Mobile: layout em linha e alinhamento */
+@media (max-width: 600px) {
+    .projetos-hero { padding: 30px 15px; }
+    .projetos-hero h1 { font-size: 1.7rem; }
+    .projetos-hero .hero-ctas a { display: block; width: 100%; margin: 10px 0 0 0; }
     
-    /* Adiciona Labels no Mobile */
-    .linha-projeto > div:nth-child(1):before { content: "PROJETO:"; }
-    .linha-projeto > div:nth-child(2):before { content: "ÁREA:"; }
-    .linha-projeto > div:nth-child(3):before { content: "STATUS:"; }
-    .linha-projeto > div:nth-child(4):before { content: "AÇÃO:"; }
-
-    .status-projeto {
-        display: inline-block;
-        margin-top: 5px;
-    }
-
-    .acao-projeto {
-        margin-top: 15px;
-        text-align: center;
-    }
+    .project-media img { height: 140px; }
+    .project-body { padding: 15px; }
+    .project-meta { flex-direction: column; align-items: stretch; }
+    .project-meta a.btn-detalhe { text-align: center; }
 }
